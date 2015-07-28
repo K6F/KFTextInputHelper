@@ -1,0 +1,6 @@
+framework module KFTextInputHelper {
+  umbrella header "KFTextInputHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

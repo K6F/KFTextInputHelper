@@ -1,0 +1,14 @@
+PODS:
+  - KFTextInputHelper (0.1.0)
+
+DEPENDENCIES:
+  - KFTextInputHelper (from `../`)
+
+EXTERNAL SOURCES:
+  KFTextInputHelper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KFTextInputHelper: 9254643e256a7ce6ce4f38e8d77b5499743dcd64
+
+COCOAPODS: 0.38.2

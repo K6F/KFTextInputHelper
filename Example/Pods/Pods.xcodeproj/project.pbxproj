@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0115D1C1E50B5B4BC62670207CFE66DC /* KFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FBEB3A18E1A0CFB375FCCEAC97885D /* KFTextView.m */; };
+		08B555F2B84502FDAA68DAC503F588B5 /* KF_KeyboardSeparateLine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66695C6E191A8746AD4888FE4074E2D9 /* KF_KeyboardSeparateLine@3x.png */; };
+		1DDE416A86091C57AE584EE22748CB0C /* KFTextInputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7942D0DF1C2ED7608B24B62CD9E72E9 /* KFTextInputHelper.m */; };
+		29D13735B6683AA25CD05187E09A433F /* KFPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAAA04B5A24293A4FF3B1EFD70B475C /* KFPickerTextField.m */; };
+		3B5B38AFF844A62B6F1E6EDD1BA66EF2 /* KFTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C98F16507896153EDF1F9E095C68ADA /* KFTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54EA3D65459100DFAC30EDB9B98452E9 /* Pods-KFTextInputHelper_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C38A019DCF0A8861A9CEE98861C3D1D9 /* Pods-KFTextInputHelper_Example-dummy.m */; };
+		67BDA9B42EF182ED81359E566FDEABED /* KF_KeyboardDown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */; };
+		6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		719639A0DC02BC94E2EF1BB5C33240DB /* Pods-KFTextInputHelper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE684180F87B00EFD78D2A10AF85E3F /* Pods-KFTextInputHelper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8287E01D2E5E481E9A3DB6A7086EC10F /* KFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */; };
+		87BE77AF43EBBC0A1A23B8DCE8F3E206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
+		9B72BD61C82C4B1341110F8072226439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
+		A4B1835BA87083B4E49F20D4959C36AA /* KFTextInputHelper.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 027951E18E81B8ED1E1F48BB257938C3 /* KFTextInputHelper.bundle */; };
+		B98F2CD064B6F6F5C05DB04571402AFB /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */; };
+		C2B7BE6F894CBB27426B7CC8D78F1A67 /* KFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB78A5B6DC8B90D699D3F23286990D0F /* KFTextInputHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 083CC416113B7C8E1FD2C3705F1C33DC /* KFTextInputHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */; };
+		FDD957C9D759E6A67F2B26D8E292CCA7 /* KFPickerTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDDC246F7120505EA068CE9EEFD4F84B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 258F11A47E25AC0E31661573A8F1911A;
+			remoteInfo = "KFTextInputHelper-KFTextInputHelper";
+		};
+		DB25FEA4F33DE4FBCED06E823FE9C32E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBE0F9046DD69382AA0A06BFDEB766E4;
+			remoteInfo = KFTextInputHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		027951E18E81B8ED1E1F48BB257938C3 /* KFTextInputHelper.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KFTextInputHelper.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FBEB3A18E1A0CFB375FCCEAC97885D /* KFTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = KFTextView.m; sourceTree = "<group>"; };
+		083CC416113B7C8E1FD2C3705F1C33DC /* KFTextInputHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KFTextInputHelper-umbrella.h"; sourceTree = "<group>"; };
+		0BB96FF72B2115DCB28F146C1B0296F8 /* Pods-KFTextInputHelper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFTextInputHelper_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		187E6BFC5F280019C25B7FA62D0D6E9A /* Pods-KFTextInputHelper_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KFTextInputHelper_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1C98F16507896153EDF1F9E095C68ADA /* KFTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = KFTextView.h; sourceTree = "<group>"; };
+		1E0105F3325254B4CCCEDC334B1C8E60 /* Pods_KFTextInputHelper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KFTextInputHelper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = KFTextField.m; sourceTree = "<group>"; };
+		2F846803CA5A53A45F6E344C109F40E3 /* KFTextInputHelper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KFTextInputHelper.modulemap; sourceTree = "<group>"; };
+		323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		39F7ED9C2C8BD28E9CC2B9A4029BA3A8 /* Pods-KFTextInputHelper_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KFTextInputHelper_Example.modulemap"; sourceTree = "<group>"; };
+		3C1473263A240387CFD5B6399B396469 /* Pods-KFTextInputHelper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KFTextInputHelper_Example-frameworks.sh"; sourceTree = "<group>"; };
+		41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		66695C6E191A8746AD4888FE4074E2D9 /* KF_KeyboardSeparateLine@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "KF_KeyboardSeparateLine@3x.png"; sourceTree = "<group>"; };
+		6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFTextInputHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6FB72119D8A9EAFB47CD54B03B616E4F /* Pods-KFTextInputHelper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KFTextInputHelper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "KF_KeyboardDown@3x.png"; sourceTree = "<group>"; };
+		8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KFTextInputHelper-dummy.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = KFPickerTextField.h; sourceTree = "<group>"; };
+		C28D7908889FC6B1D5D4E245F965D1CC /* KFTextInputHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KFTextInputHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38A019DCF0A8861A9CEE98861C3D1D9 /* Pods-KFTextInputHelper_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KFTextInputHelper_Example-dummy.m"; sourceTree = "<group>"; };
+		DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = KFTextField.h; sourceTree = "<group>"; };
+		DDAAA04B5A24293A4FF3B1EFD70B475C /* KFPickerTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = KFPickerTextField.m; sourceTree = "<group>"; };
+		E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = KFTextInputHelper.h; sourceTree = "<group>"; };
+		E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "KFTextInputHelper-Private.xcconfig"; sourceTree = "<group>"; };
+		E7942D0DF1C2ED7608B24B62CD9E72E9 /* KFTextInputHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = KFTextInputHelper.m; sourceTree = "<group>"; };
+		E9F7E06DAD6C07FD121023B7F74283DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE684180F87B00EFD78D2A10AF85E3F /* Pods-KFTextInputHelper_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KFTextInputHelper_Example-umbrella.h"; sourceTree = "<group>"; };
+		F371F8CB84E2BF60339B7EE9D901174A /* Pods-KFTextInputHelper_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KFTextInputHelper_Example-resources.sh"; sourceTree = "<group>"; };
+		F4F0BFC29305886D50D4DC834BF02ADC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F68021875B8868FF3F48262D44FE5E0C /* KFTextInputHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KFTextInputHelper.xcconfig; sourceTree = "<group>"; };
+		F8E62DBA464355B0B7C5F7315EC00204 /* KFTextInputHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KFTextInputHelper-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		602B5F2515EEE321F8E85F731B2D6E89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7260AB02E2BD20CEF0CCF93B0B136617 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B72BD61C82C4B1341110F8072226439 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C0E0EDFD283EC7A6C7ABE2408A9BEFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87BE77AF43EBBC0A1A23B8DCE8F3E206 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A3751376BD19EC7CEB22DA30F4A6A0E /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F00B3AA336D741A7EF7D5ABD4FCA866 /* KFTextInputHelper */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		372B4951A541FD64E69B74D0E5726F97 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF2AA8763AED802102AABCDEF65668CF /* Pods-KFTextInputHelper_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		38015435AD5BA23469A6669FC01E1D57 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BBDEFEAE81B5DBC57FE80D9248448C95 /* Assets */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5D21CC6BA1E4944D667A8BBBCA72151D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerTextField.h */,
+				DDAAA04B5A24293A4FF3B1EFD70B475C /* KFPickerTextField.m */,
+				DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */,
+				2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */,
+				E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */,
+				E7942D0DF1C2ED7608B24B62CD9E72E9 /* KFTextInputHelper.m */,
+				1C98F16507896153EDF1F9E095C68ADA /* KFTextView.h */,
+				04FBEB3A18E1A0CFB375FCCEAC97885D /* KFTextView.m */,
+				41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		78C2D576C402FA7218F660BB57D9EF8F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38015435AD5BA23469A6669FC01E1D57 /* Pod */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				1A3751376BD19EC7CEB22DA30F4A6A0E /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				372B4951A541FD64E69B74D0E5726F97 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9F00B3AA336D741A7EF7D5ABD4FCA866 /* KFTextInputHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A48E10193BBF6EB564F7B72982867F90 /* Pod */,
+				78C2D576C402FA7218F660BB57D9EF8F /* Resources */,
+				E515F53A8D573C897BE35C8FB2D09D32 /* Support Files */,
+			);
+			name = KFTextInputHelper;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		A48E10193BBF6EB564F7B72982867F90 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				5D21CC6BA1E4944D667A8BBBCA72151D /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		BBDEFEAE81B5DBC57FE80D9248448C95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */,
+				66695C6E191A8746AD4888FE4074E2D9 /* KF_KeyboardSeparateLine@3x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF2AA8763AED802102AABCDEF65668CF /* Pods-KFTextInputHelper_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F4F0BFC29305886D50D4DC834BF02ADC /* Info.plist */,
+				39F7ED9C2C8BD28E9CC2B9A4029BA3A8 /* Pods-KFTextInputHelper_Example.modulemap */,
+				187E6BFC5F280019C25B7FA62D0D6E9A /* Pods-KFTextInputHelper_Example-acknowledgements.markdown */,
+				6FB72119D8A9EAFB47CD54B03B616E4F /* Pods-KFTextInputHelper_Example-acknowledgements.plist */,
+				C38A019DCF0A8861A9CEE98861C3D1D9 /* Pods-KFTextInputHelper_Example-dummy.m */,
+				3C1473263A240387CFD5B6399B396469 /* Pods-KFTextInputHelper_Example-frameworks.sh */,
+				F371F8CB84E2BF60339B7EE9D901174A /* Pods-KFTextInputHelper_Example-resources.sh */,
+				EAE684180F87B00EFD78D2A10AF85E3F /* Pods-KFTextInputHelper_Example-umbrella.h */,
+				0BB96FF72B2115DCB28F146C1B0296F8 /* Pods-KFTextInputHelper_Example.debug.xcconfig */,
+				6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */,
+			);
+			name = "Pods-KFTextInputHelper_Example";
+			path = "Target Support Files/Pods-KFTextInputHelper_Example";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				027951E18E81B8ED1E1F48BB257938C3 /* KFTextInputHelper.bundle */,
+				C28D7908889FC6B1D5D4E245F965D1CC /* KFTextInputHelper.framework */,
+				1E0105F3325254B4CCCEDC334B1C8E60 /* Pods_KFTextInputHelper_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E515F53A8D573C897BE35C8FB2D09D32 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9F7E06DAD6C07FD121023B7F74283DD /* Info.plist */,
+				2F846803CA5A53A45F6E344C109F40E3 /* KFTextInputHelper.modulemap */,
+				F68021875B8868FF3F48262D44FE5E0C /* KFTextInputHelper.xcconfig */,
+				E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */,
+				8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */,
+				F8E62DBA464355B0B7C5F7315EC00204 /* KFTextInputHelper-prefix.pch */,
+				083CC416113B7C8E1FD2C3705F1C33DC /* KFTextInputHelper-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/KFTextInputHelper";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		676BF3D234EDB4DA994462158BFDEA3F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD957C9D759E6A67F2B26D8E292CCA7 /* KFPickerTextField.h in Headers */,
+				C2B7BE6F894CBB27426B7CC8D78F1A67 /* KFTextField.h in Headers */,
+				CB78A5B6DC8B90D699D3F23286990D0F /* KFTextInputHelper-umbrella.h in Headers */,
+				6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */,
+				3B5B38AFF844A62B6F1E6EDD1BA66EF2 /* KFTextView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75D109FCF6AC5E24AFAE05A837EB1559 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719639A0DC02BC94E2EF1BB5C33240DB /* Pods-KFTextInputHelper_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		16AE76DFEE2DE717FC3E79E51DCBB336 /* Pods-KFTextInputHelper_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA4F1864ACED04F495F0575D53BF58A5 /* Build configuration list for PBXNativeTarget "Pods-KFTextInputHelper_Example" */;
+			buildPhases = (
+				A9C82330CD44B5D71600D00A2D6DD363 /* Sources */,
+				7260AB02E2BD20CEF0CCF93B0B136617 /* Frameworks */,
+				75D109FCF6AC5E24AFAE05A837EB1559 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D77DA93229DC14849A4AAE25F4145D3 /* PBXTargetDependency */,
+			);
+			name = "Pods-KFTextInputHelper_Example";
+			productName = "Pods-KFTextInputHelper_Example";
+			productReference = 1E0105F3325254B4CCCEDC334B1C8E60 /* Pods_KFTextInputHelper_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		258F11A47E25AC0E31661573A8F1911A /* KFTextInputHelper-KFTextInputHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 769FB1E76CD6228702116B9811E0C981 /* Build configuration list for PBXNativeTarget "KFTextInputHelper-KFTextInputHelper" */;
+			buildPhases = (
+				90FC0D9C4FC5B0043E1FEE8BB436A939 /* Sources */,
+				602B5F2515EEE321F8E85F731B2D6E89 /* Frameworks */,
+				1410D0BF2C577F0B76BAF6AE26B7AB24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KFTextInputHelper-KFTextInputHelper";
+			productName = "KFTextInputHelper-KFTextInputHelper";
+			productReference = 027951E18E81B8ED1E1F48BB257938C3 /* KFTextInputHelper.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		BBE0F9046DD69382AA0A06BFDEB766E4 /* KFTextInputHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D979DD42C8D0CF3FA9F613E13E9B87C /* Build configuration list for PBXNativeTarget "KFTextInputHelper" */;
+			buildPhases = (
+				3C253B7793B1172824B881CF10F3515C /* Sources */,
+				7C0E0EDFD283EC7A6C7ABE2408A9BEFF /* Frameworks */,
+				4875292D2867772A0D49ABC4150C0A6A /* Resources */,
+				676BF3D234EDB4DA994462158BFDEA3F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0596283EF8659A7C00F7FA8D0352C73 /* PBXTargetDependency */,
+			);
+			name = KFTextInputHelper;
+			productName = KFTextInputHelper;
+			productReference = C28D7908889FC6B1D5D4E245F965D1CC /* KFTextInputHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBE0F9046DD69382AA0A06BFDEB766E4 /* KFTextInputHelper */,
+				258F11A47E25AC0E31661573A8F1911A /* KFTextInputHelper-KFTextInputHelper */,
+				16AE76DFEE2DE717FC3E79E51DCBB336 /* Pods-KFTextInputHelper_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1410D0BF2C577F0B76BAF6AE26B7AB24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67BDA9B42EF182ED81359E566FDEABED /* KF_KeyboardDown@3x.png in Resources */,
+				08B555F2B84502FDAA68DAC503F588B5 /* KF_KeyboardSeparateLine@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4875292D2867772A0D49ABC4150C0A6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B1835BA87083B4E49F20D4959C36AA /* KFTextInputHelper.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C253B7793B1172824B881CF10F3515C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D13735B6683AA25CD05187E09A433F /* KFPickerTextField.m in Sources */,
+				8287E01D2E5E481E9A3DB6A7086EC10F /* KFTextField.m in Sources */,
+				D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */,
+				1DDE416A86091C57AE584EE22748CB0C /* KFTextInputHelper.m in Sources */,
+				0115D1C1E50B5B4BC62670207CFE66DC /* KFTextView.m in Sources */,
+				B98F2CD064B6F6F5C05DB04571402AFB /* ReplaceMe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90FC0D9C4FC5B0043E1FEE8BB436A939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C82330CD44B5D71600D00A2D6DD363 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54EA3D65459100DFAC30EDB9B98452E9 /* Pods-KFTextInputHelper_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D77DA93229DC14849A4AAE25F4145D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KFTextInputHelper;
+			target = BBE0F9046DD69382AA0A06BFDEB766E4 /* KFTextInputHelper */;
+			targetProxy = DB25FEA4F33DE4FBCED06E823FE9C32E /* PBXContainerItemProxy */;
+		};
+		B0596283EF8659A7C00F7FA8D0352C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KFTextInputHelper-KFTextInputHelper";
+			target = 258F11A47E25AC0E31661573A8F1911A /* KFTextInputHelper-KFTextInputHelper */;
+			targetProxy = CDDC246F7120505EA068CE9EEFD4F84B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02A189CF393D136F9AABAD7610F77D5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KFTextInputHelper/KFTextInputHelper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KFTextInputHelper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KFTextInputHelper/KFTextInputHelper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KFTextInputHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0D5B5480878C41699E35D4AEE8EACD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KFTextInputHelper_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-KFTextInputHelper_Example/Pods-KFTextInputHelper_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_KFTextInputHelper_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		314A42A77B2238A85E41C554192CC113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KFTextInputHelper/KFTextInputHelper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KFTextInputHelper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KFTextInputHelper/KFTextInputHelper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = KFTextInputHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		62BCF7AA105C180C8C888520A503541A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB96FF72B2115DCB28F146C1B0296F8 /* Pods-KFTextInputHelper_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KFTextInputHelper_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-KFTextInputHelper_Example/Pods-KFTextInputHelper_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_KFTextInputHelper_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		86A87668B230C516EE57F19B66EF4FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = KFTextInputHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E5FFB482F9DC98B8C6920B9F9DFFFD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E458D810FCC3FB2ABA3A69C9161ABC07 /* KFTextInputHelper-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = KFTextInputHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		769FB1E76CD6228702116B9811E0C981 /* Build configuration list for PBXNativeTarget "KFTextInputHelper-KFTextInputHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86A87668B230C516EE57F19B66EF4FA6 /* Debug */,
+				E5FFB482F9DC98B8C6920B9F9DFFFD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D979DD42C8D0CF3FA9F613E13E9B87C /* Build configuration list for PBXNativeTarget "KFTextInputHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				314A42A77B2238A85E41C554192CC113 /* Debug */,
+				02A189CF393D136F9AABAD7610F77D5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA4F1864ACED04F495F0575D53BF58A5 /* Build configuration list for PBXNativeTarget "Pods-KFTextInputHelper_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62BCF7AA105C180C8C888520A503541A /* Debug */,
+				0D5B5480878C41699E35D4AEE8EACD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

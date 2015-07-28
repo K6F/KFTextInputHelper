@@ -9,20 +9,37 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+###Use KFTextField, KFTextView
+####Only In storyboard
+In storyboard, change the class of UITextField or UITextView
+to KFTextField or KFTextView
+
+### Use KFTextInputHelper
+To use KFTextInputHelper, invoke init method and it would setup automatically.
+
+```objective-c
+- (void) viewDidLoad{
+	[super viewDidLoad];
+	KFTextInputHelper *helper;
+	helper = [KFTextInputHelper helperWithContainerView:self.view];
+	// [KFTextInputHelper alloc] initWithContainerView:self.view];
+}
+``` 
+
 ## Requirements
 
 ## Installation
 
-KFTextInputHelper is available through [CocoaPods](http://cocoapods.org). To install
+KFTextInputHelper is not available through [CocoaPods](http://cocoapods.org) yet. To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "KFTextInputHelper"
+pod "KFTextInputHelper", :git=>"https://github.com/K6F/KFTextInputHelper.git"
 ```
 
 ## Author
 
-K6F, fan.kaiyuan@gmail.com
+K6F, Fan.Khiyuan@gmail.com
 
 ## License
 

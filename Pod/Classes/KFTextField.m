@@ -20,9 +20,23 @@
     CGColorRef originalBorderColor;
     float originalBorderWidth;
     KFTextInputHelper * _kfInputHelper;
+    BOOL pIsInit;
 }
--(void)drawRect:(CGRect)rect{
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        pIsInit = YES;
+        self.enabled = NO;
+    }
+    return self;
+}
+- (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    if (pIsInit) {
+        pIsInit = NO;
+        self.enabled = YES;
+    }
     if (!self.superview.kfInputViewHelper)
         self.superview.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
 }

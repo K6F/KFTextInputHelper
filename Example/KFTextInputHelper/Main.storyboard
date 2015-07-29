@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lva-Xn-qpR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--KFTextField-->
@@ -56,8 +57,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSF-sU-8F9" customClass="KFTextField">
+                                <rect key="frame" x="16" y="264" width="568" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftViewWidth">
+                                        <integer key="value" value="88"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftViewBackgroundcolor">
+                                        <color key="value" red="0.9615426064" green="0.9260717034" blue="0.79665756229999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftViewText" value="用户名:"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOc-LI-J8K" customClass="KFTextField">
-                                <rect key="frame" x="200" y="264" width="200" height="40"/>
+                                <rect key="frame" x="200" y="302" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PhL-o0-ORV"/>
@@ -67,7 +83,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Q-Hx-YOT" customClass="KFTextField">
-                                <rect key="frame" x="200" y="312" width="200" height="40"/>
+                                <rect key="frame" x="200" y="350" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="bJN-9E-zyJ"/>
@@ -77,7 +93,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AxI-kY-3tN" customClass="KFTextField">
-                                <rect key="frame" x="200" y="360" width="200" height="40"/>
+                                <rect key="frame" x="200" y="398" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="UM1-PR-C7D"/>
@@ -87,7 +103,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="8" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqg-KG-ZoN" customClass="KFTextField">
-                                <rect key="frame" x="200" y="408" width="200" height="40"/>
+                                <rect key="frame" x="200" y="446" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PVR-yW-Fdu"/>
@@ -97,7 +113,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-Ze-glu" customClass="KFTextField">
-                                <rect key="frame" x="200" y="456" width="200" height="40"/>
+                                <rect key="frame" x="200" y="494" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FVz-gk-bHL"/>
@@ -107,7 +123,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-ph-oTo" customClass="KFTextField">
-                                <rect key="frame" x="200" y="504" width="200" height="40"/>
+                                <rect key="frame" x="200" y="542" width="200" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hpe-Ay-28W"/>
@@ -122,18 +138,21 @@
                         <constraints>
                             <constraint firstItem="zZb-8b-Ic4" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="8" id="4Ep-u2-R03"/>
                             <constraint firstAttribute="centerX" secondItem="BxI-44-EVR" secondAttribute="centerX" id="73B-Iu-OQc"/>
+                            <constraint firstItem="BSF-sU-8F9" firstAttribute="top" secondItem="kaB-wY-Arh" secondAttribute="bottom" constant="8" id="77T-yC-24D"/>
                             <constraint firstItem="V7N-ph-oTo" firstAttribute="top" secondItem="GAk-Ze-glu" secondAttribute="bottom" constant="8" id="7Pi-av-t2C"/>
+                            <constraint firstItem="BSF-sU-8F9" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="HMi-as-ATJ"/>
                             <constraint firstItem="BxI-44-EVR" firstAttribute="top" secondItem="zZb-8b-Ic4" secondAttribute="bottom" constant="8" id="InS-KL-tQq"/>
                             <constraint firstAttribute="centerX" secondItem="V7N-ph-oTo" secondAttribute="centerX" id="NQa-wS-g8H"/>
-                            <constraint firstItem="hOc-LI-J8K" firstAttribute="top" secondItem="kaB-wY-Arh" secondAttribute="bottom" constant="8" id="R6q-iX-OyQ"/>
                             <constraint firstAttribute="centerX" secondItem="zZb-8b-Ic4" secondAttribute="centerX" id="SlL-pb-aSr"/>
                             <constraint firstAttribute="centerX" secondItem="Q3Q-Hx-YOT" secondAttribute="centerX" id="U5N-DV-YvN"/>
                             <constraint firstItem="AxI-kY-3tN" firstAttribute="top" secondItem="Q3Q-Hx-YOT" secondAttribute="bottom" constant="8" id="a9t-IP-saC"/>
-                            <constraint firstItem="Q3Q-Hx-YOT" firstAttribute="top" secondItem="hOc-LI-J8K" secondAttribute="bottom" constant="8" id="cOc-2V-Yb8"/>
                             <constraint firstAttribute="centerX" secondItem="i0B-xJ-zAb" secondAttribute="centerX" id="cVN-01-Ccq"/>
                             <constraint firstItem="kaB-wY-Arh" firstAttribute="top" secondItem="i0B-xJ-zAb" secondAttribute="bottom" constant="8" id="dNt-cb-b3k"/>
                             <constraint firstAttribute="centerX" secondItem="GAk-Ze-glu" secondAttribute="centerX" id="fgA-51-wk1"/>
+                            <constraint firstItem="hOc-LI-J8K" firstAttribute="top" secondItem="BSF-sU-8F9" secondAttribute="bottom" constant="8" id="hrH-qa-oly"/>
                             <constraint firstAttribute="centerX" secondItem="hOc-LI-J8K" secondAttribute="centerX" id="jPX-qL-grL"/>
+                            <constraint firstItem="BSF-sU-8F9" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="jdv-Sl-iwY"/>
+                            <constraint firstItem="Q3Q-Hx-YOT" firstAttribute="top" secondItem="hOc-LI-J8K" secondAttribute="bottom" constant="8" id="kXX-fC-gjV"/>
                             <constraint firstAttribute="centerX" secondItem="AxI-kY-3tN" secondAttribute="centerX" id="kfF-ac-l0C"/>
                             <constraint firstItem="i0B-xJ-zAb" firstAttribute="top" secondItem="BxI-44-EVR" secondAttribute="bottom" constant="8" id="kxv-l2-GgW"/>
                             <constraint firstAttribute="centerX" secondItem="gqg-KG-ZoN" secondAttribute="centerX" id="md2-bo-JDM"/>

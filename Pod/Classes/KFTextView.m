@@ -10,10 +10,23 @@
 #import "KFTextInputHelper.h"
 @implementation KFTextView{
     KFTextInputHelper *_kfInputHelper;
+    BOOL pIsInit;
 }
-
--(void)drawRect:(CGRect)rect{
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        pIsInit = YES;
+        self.editable = NO;
+    }
+    return self;
+}
+- (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    if (pIsInit) {
+        pIsInit = NO;
+        self.editable = YES;
+    }
     if (!self.superview.kfInputViewHelper)
         self.superview.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
 }

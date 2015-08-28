@@ -21,7 +21,9 @@ static char mInputViewHelperKey;
 #pragma mark - Setter & Getter
 
 -(void)setKfInputViewHelper:(KFTextInputHelper *)kfInputViewHelper{
-    objc_setAssociatedObject(self, &mInputViewHelperKey, kfInputViewHelper, OBJC_ASSOCIATION_RETAIN);
+    @synchronized(self.kfInputViewHelper){
+        objc_setAssociatedObject(self, &mInputViewHelperKey, kfInputViewHelper, OBJC_ASSOCIATION_RETAIN);
+    }
 }
 - (KFTextInputHelper *)kfInputViewHelper{
     return objc_getAssociatedObject(self, &mInputViewHelperKey);

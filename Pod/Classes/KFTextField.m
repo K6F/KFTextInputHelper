@@ -15,8 +15,12 @@
 #import "KFTextField.h"
 #import "KFTextInputHelper.h"
 
+@interface KFTextField()
+@property (nonatomic) UILabel *pLeftLabel;
+
+@end
+
 @implementation KFTextField{
-    UILabel * paddingView;
     CGColorRef originalBorderColor;
     float originalBorderWidth;
     KFTextInputHelper * _kfInputHelper;
@@ -31,62 +35,75 @@
     }
     return self;
 }
+
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (pIsInit) {
         pIsInit = NO;
         self.enabled = YES;
     }
+    
     if (!self.superview.kfInputViewHelper)
         self.superview.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
 }
-#pragma mark - LeftView
--(void)setLeftViewText:(NSString *)text{
-    if (!text) return;
-    if ([text isEqualToString:@""]) return;
-    _leftViewText = text;
-    
-    paddingView = [[UILabel alloc] init];
-    paddingView.textColor = [UIColor darkGrayColor];
-    paddingView.backgroundColor = [UIColor clearColor];
-    if (_leftViewBackgroundcolor) {
-        paddingView.backgroundColor = _leftViewBackgroundcolor;
-    }
-    // config border width
-    float borderWidth = 1.f;
-    if (self.leftViewBorderWidth) {
-        borderWidth = [self.leftViewBorderWidth floatValue];
-    }
-    paddingView.layer.borderWidth = borderWidth;
-    // config border color
-    CGColorRef borderColor = [UIColor brownColor].CGColor;
-    if (self.leftViewBorderColor) {
-        borderColor = self.leftViewBorderColor.CGColor;
-    }
-    paddingView.layer.borderColor = [[UIColor brownColor] CGColor];
-    
-    paddingView.layer.cornerRadius = 4.f;
-    paddingView.textAlignment = NSTextAlignmentRight;
-    paddingView.text = _leftViewText;
-    CGFloat viewWidth;
-    if (_leftViewWidth) {
-        viewWidth = [_leftViewWidth floatValue];
-    }else{
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    NSDictionary *attributes = @{NSFontAttributeName:paddingView.font, NSParagraphStyleAttributeName:paragraphStyle.copy};
-    viewWidth = [_leftViewText
-                   boundingRectWithSize:CGSizeMake(999, 999)
-                   options:NSStringDrawingUsesLineFragmentOrigin
-                   attributes:attributes
-                   context:nil
-                   ].size.width;
-    }
-    paddingView.frame = CGRectMake(0, 0, viewWidth, self.bounds.size.height);
-    self.leftView = paddingView;
-    self.leftViewMode = UITextFieldViewModeAlways;
+
+- (void)layoutSubviews{
+    [self p_drawLeftLabel];
 }
+
+#pragma mark - methods
+
+- (void)p_drawLeftLabel{
+    
+    // Left label
+    if (!_pLeftLabel) return;
+    if (self.leftViewBackgroundcolor) {
+        self.pLeftLabel.backgroundColor = self.leftViewBackgroundcolor;
+    }
+    // Border width
+    float mBorderWidth = 1.f;
+    if (self.leftViewBorderWidth) {
+        mBorderWidth = [self.leftViewBorderWidth floatValue];
+    }
+    self.pLeftLabel.layer.borderWidth = mBorderWidth;
+    
+    // Border color
+    CGColorRef mBorderColor = [UIColor brownColor].CGColor;
+    if (self.leftViewBorderColor) {
+        mBorderColor = self.leftViewBorderColor.CGColor;
+    }
+    self.pLeftLabel.layer.borderColor = mBorderColor;
+    self.pLeftLabel.layer.cornerRadius = 4.f;
+    self.pLeftLabel.textAlignment = NSTextAlignmentRight;
+    
+    // Label width
+    CGFloat mLabelWidth;
+    if (self.leftViewWidth) {
+        mLabelWidth = [self.leftViewWidth floatValue];
+    }else{
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        NSDictionary *attributes = @{NSFontAttributeName:self.pLeftLabel.font, NSParagraphStyleAttributeName:paragraphStyle.copy};
+        CGRect mBounds = [_leftViewText boundingRectWithSize:CGSizeMake(999, 999)
+                                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:attributes
+                                                     context:nil];
+        mLabelWidth = mBounds.size.width;
+    }
+    self.pLeftLabel.frame = CGRectMake(0, 0, mLabelWidth, self.bounds.size.height);
+}
+
+#pragma mark - LeftView
+
+-(void)setLeftViewText:(NSString *)mText{
+    if (!mText) return;
+    if ([mText isEqualToString:@""]) return;
+    _leftViewText = mText;
+    // load left label
+    self.pLeftLabel.text = mText;
+    [self layoutIfNeeded];
+}
+
 -(void)setLeftViewWidth:(NSNumber *)leftViewWidth{
     if (!leftViewWidth) return;
     if (0.01 > leftViewWidth.floatValue) return;
@@ -95,11 +112,13 @@
     frm.size.width = [leftViewWidth floatValue];
     self.leftView.frame = frm;
 }
+
 -(void)setLeftViewBackgroundcolor:(UIColor *)leftViewBackgroundcolor{
     if (!leftViewBackgroundcolor) return;
     _leftViewBackgroundcolor = leftViewBackgroundcolor;
     self.leftView.backgroundColor = _leftViewBackgroundcolor;
 }
+
 /**
  *  @author Khiyuan.Fan, 2015-12[3]
  *
@@ -110,13 +129,42 @@
 -(void)setLeftViewBorderWidth:(NSNumber *)leftViewBorderWidth{
     if (!leftViewBorderWidth) return;
     _leftViewBorderWidth = leftViewBorderWidth;
-    paddingView.layer.borderWidth = leftViewBorderWidth.floatValue;
+    self.pLeftLabel.layer.borderWidth = leftViewBorderWidth.floatValue;
 }
 
 -(void)setLeftViewBorderColor:(UIColor *)leftViewBorderColor{
     if (!leftViewBorderColor) return;
     _leftViewBorderColor = leftViewBorderColor;
-    paddingView.layer.borderColor = leftViewBorderColor.CGColor;
+    self.pLeftLabel.layer.borderColor = leftViewBorderColor.CGColor;
+}
+
+#pragma mark - Main View
+
+- (void)setKfBorderColor:(UIColor *)mBorderColor{
+    _kfBorderColor = mBorderColor;
+    self.layer.borderColor = mBorderColor.CGColor;
+}
+
+- (void)setKfIsCorrect:(BOOL)mIsCorrect{
+    _kfIsCorrect = mIsCorrect;
+    if (mIsCorrect) {
+        self.layer.borderColor = self.kfBorderColor.CGColor;
+    }else{
+        self.layer.borderColor = self.kfInCorrectBorderColor.CGColor;
+    }
+}
+
+#pragma mark - Setter & Getter
+
+- (UILabel *)pLeftLabel{
+    if (!_pLeftLabel) {
+        _pLeftLabel = [[UILabel alloc] init];
+        _pLeftLabel.textColor = [UIColor darkGrayColor];
+        _pLeftLabel.backgroundColor = [UIColor clearColor];
+        self.leftView = _pLeftLabel;
+        self.leftViewMode = UITextFieldViewModeAlways;
+    }
+    return _pLeftLabel;
 }
 
 @end

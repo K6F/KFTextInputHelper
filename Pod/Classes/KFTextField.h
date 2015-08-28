@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, KFTextFieldType) {
-    KFTextFieldTypeNone =0,
-    KFTextFieldTypeNickname
+typedef NS_ENUM(NSUInteger, KFTextFieldVerifyType) {
+    KFTextFieldNoVerify =0,
+    KFTextFieldNickname,
+    KFTextFieldNumberic,
+    KFTextFieldEmail
 };
 
 
@@ -28,21 +30,23 @@ typedef NS_ENUM(NSUInteger, KFTextFieldType) {
 @protected UIBarButtonItem *doneBarButton;
 @protected int _move_offset;
 }
-@property (nonatomic,setter=setDoneCommand:) BOOL isDoneCommand;
+
+#pragma mark - Left View
 @property (nonatomic) NSNumber* leftViewWidth;
 @property (nonatomic) NSString* leftViewText;
 @property (nonatomic) UIColor*  leftViewBackgroundcolor;
 /**
  *  @author Khiyuan.Fan, 2015-12[3]
  *
- *  Add border config for left view
+ *  Border config for left view
  */
 @property (nonatomic) NSNumber* leftViewBorderWidth;
 @property (nonatomic) UIColor * leftViewBorderColor;
 
-@property (nonatomic) KFTextFieldType verifyType;
-
--(void)setDoneCommand:(BOOL) bol;
--(void)setMoveOffset:(int) offset;
+@property (nonatomic) KFTextFieldVerifyType kfVerifyType;
+#pragma mark - Main View
+@property (nonatomic) UIColor *kfBorderColor;
+@property (nonatomic) UIColor *kfInCorrectBorderColor;
+@property (nonatomic) BOOL kfIsCorrect;
 @end
 

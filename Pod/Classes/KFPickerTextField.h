@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KFTextField.h"
 
-typedef void(^KFTextFieldCompletionBlock)(NSInteger index);
+typedef void(^KFTextFieldCompletionBlock)(NSInteger row,NSInteger component);
 
 @interface KFPickerTextField : KFTextField
 @property (nonatomic) NSUInteger selectedIndex;
@@ -18,6 +18,6 @@ typedef void(^KFTextFieldCompletionBlock)(NSInteger index);
 @property (nonatomic,assign) id<UIPickerViewDataSource> pickerDataSource;
 @property (nonatomic,assign) id <UIPickerViewDelegate>  pickerDelegate;
 
--(void)setPickerItems:(NSArray *)_pickerItems;
--(void)setPickerItems:(NSArray *)_pickerItems WithCompletion:(KFTextFieldCompletionBlock) completion;
+-(void)setPickerItems:(NSArray *)pickerItems;
+-(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldCompletionBlock) completion;
 @end

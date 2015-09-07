@@ -9,8 +9,7 @@
 #import "KFPickerTextField.h"
 
 @interface KFPickerTextField () <UIPickerViewDelegate, UIPickerViewDataSource>{
-    KFTextFieldCompletionBlock completionBlock;
-
+    KFTextFieldCompletionBlock pCompletionBlock;
 }
 @property (nonatomic) NSArray* items;
 @property (nonatomic, strong) UIPickerView *pPickerView;
@@ -21,12 +20,12 @@
 @implementation KFPickerTextField
 @synthesize items,selectedIndex;
 
--(void)setPickerItems:(NSArray *)pickerItems{
-    [self setPickerItems:pickerItems andSelect:0];
+-(void)setPickerItems:(NSArray *)mPickerItems{
+    [self setPickerItems:mPickerItems andSelect:0];
 }
--(void)setPickerItems:(NSArray *)_pickerItems WithCompletion:(KFTextFieldCompletionBlock)completion{
-    completionBlock = completion;
-    [self setPickerItems:_pickerItems];
+-(void)setPickerItems:(NSArray *)mPickerItems completion:(KFTextFieldCompletionBlock)mCompletion{
+    pCompletionBlock = mCompletion;
+    [self setPickerItems:mPickerItems];
 }
 -(void)setPickerItems:(NSArray *)pickerItems andSelect:(NSUInteger) idx{
     self.items = pickerItems;
@@ -86,6 +85,9 @@
       inComponent:(NSInteger)component{
     self.selectedIndex = row;
     self.text = self.items[row];
+    if (pCompletionBlock) {
+        pCompletionBlock(row,component);
+    }
 }
 
 

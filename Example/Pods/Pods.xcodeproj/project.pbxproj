@@ -20,7 +20,6 @@
 		87BE77AF43EBBC0A1A23B8DCE8F3E206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
 		9B72BD61C82C4B1341110F8072226439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
 		A4B1835BA87083B4E49F20D4959C36AA /* KFTextInputHelper.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 027951E18E81B8ED1E1F48BB257938C3 /* KFTextInputHelper.bundle */; };
-		B98F2CD064B6F6F5C05DB04571402AFB /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */; };
 		C2B7BE6F894CBB27426B7CC8D78F1A67 /* KFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB78A5B6DC8B90D699D3F23286990D0F /* KFTextInputHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 083CC416113B7C8E1FD2C3705F1C33DC /* KFTextInputHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */; };
@@ -57,7 +56,6 @@
 		323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		39F7ED9C2C8BD28E9CC2B9A4029BA3A8 /* Pods-KFTextInputHelper_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KFTextInputHelper_Example.modulemap"; sourceTree = "<group>"; };
 		3C1473263A240387CFD5B6399B396469 /* Pods-KFTextInputHelper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KFTextInputHelper_Example-frameworks.sh"; sourceTree = "<group>"; };
-		41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		66695C6E191A8746AD4888FE4074E2D9 /* KF_KeyboardSeparateLine@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "KF_KeyboardSeparateLine@3x.png"; sourceTree = "<group>"; };
 		6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFTextInputHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6FB72119D8A9EAFB47CD54B03B616E4F /* Pods-KFTextInputHelper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KFTextInputHelper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				E7942D0DF1C2ED7608B24B62CD9E72E9 /* KFTextInputHelper.m */,
 				1C98F16507896153EDF1F9E095C68ADA /* KFTextView.h */,
 				04FBEB3A18E1A0CFB375FCCEAC97885D /* KFTextView.m */,
-				41F89F331D4F77C81C357ED1E9524ABC /* ReplaceMe.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -391,7 +388,6 @@
 				D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */,
 				1DDE416A86091C57AE584EE22748CB0C /* KFTextInputHelper.m in Sources */,
 				0115D1C1E50B5B4BC62670207CFE66DC /* KFTextView.m in Sources */,
-				B98F2CD064B6F6F5C05DB04571402AFB /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

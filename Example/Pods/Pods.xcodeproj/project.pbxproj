@@ -16,6 +16,8 @@
 		67BDA9B42EF182ED81359E566FDEABED /* KF_KeyboardDown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */; };
 		6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		719639A0DC02BC94E2EF1BB5C33240DB /* Pods-KFTextInputHelper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE684180F87B00EFD78D2A10AF85E3F /* Pods-KFTextInputHelper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DB37A8C1BAA6858000544F0 /* KFDatePickerTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB37A8A1BAA6858000544F0 /* KFDatePickerTextField.h */; };
+		7DB37A8D1BAA6858000544F0 /* KFDatePickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB37A8B1BAA6858000544F0 /* KFDatePickerTextField.m */; };
 		8287E01D2E5E481E9A3DB6A7086EC10F /* KFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */; };
 		87BE77AF43EBBC0A1A23B8DCE8F3E206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
 		9B72BD61C82C4B1341110F8072226439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323A0923D6ECB546725053A66D4081C8 /* Foundation.framework */; };
@@ -60,6 +62,8 @@
 		6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFTextInputHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6FB72119D8A9EAFB47CD54B03B616E4F /* Pods-KFTextInputHelper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KFTextInputHelper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "KF_KeyboardDown@3x.png"; sourceTree = "<group>"; };
+		7DB37A8A1BAA6858000544F0 /* KFDatePickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFDatePickerTextField.h; sourceTree = "<group>"; };
+		7DB37A8B1BAA6858000544F0 /* KFDatePickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFDatePickerTextField.m; sourceTree = "<group>"; };
 		8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KFTextInputHelper-dummy.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = KFPickerTextField.h; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		5D21CC6BA1E4944D667A8BBBCA72151D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7DB37A8A1BAA6858000544F0 /* KFDatePickerTextField.h */,
+				7DB37A8B1BAA6858000544F0 /* KFDatePickerTextField.m */,
 				BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerTextField.h */,
 				DDAAA04B5A24293A4FF3B1EFD70B475C /* KFPickerTextField.m */,
 				DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */,
@@ -262,6 +268,7 @@
 				CB78A5B6DC8B90D699D3F23286990D0F /* KFTextInputHelper-umbrella.h in Headers */,
 				6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */,
 				3B5B38AFF844A62B6F1E6EDD1BA66EF2 /* KFTextView.h in Headers */,
+				7DB37A8C1BAA6858000544F0 /* KFDatePickerTextField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +392,7 @@
 			files = (
 				29D13735B6683AA25CD05187E09A433F /* KFPickerTextField.m in Sources */,
 				8287E01D2E5E481E9A3DB6A7086EC10F /* KFTextField.m in Sources */,
+				7DB37A8D1BAA6858000544F0 /* KFDatePickerTextField.m in Sources */,
 				D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */,
 				1DDE416A86091C57AE584EE22748CB0C /* KFTextInputHelper.m in Sources */,
 				0115D1C1E50B5B4BC62670207CFE66DC /* KFTextView.m in Sources */,

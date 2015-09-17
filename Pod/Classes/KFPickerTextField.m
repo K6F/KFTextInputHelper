@@ -45,7 +45,7 @@
 
 #pragma mark - UIPickerViewDataSource
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    if ([self.pickerDataSource respondsToSelector:@selector(numberOfRowsInComponent:)]) {
+    if ([self.pickerDataSource respondsToSelector:@selector(pickerView:numberOfRowsInComponent:)]) {
         return [self.pickerDataSource pickerView:pickerView numberOfRowsInComponent:component];
     }
     return self.items.count;
@@ -60,10 +60,11 @@
 
 #pragma mark - UIPickerViewDelegate
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component{
-    return self.items[row];
+- (NSString *)pickerView:(UIPickerView *)mPickerView titleForRow:(NSInteger)mRow forComponent:(NSInteger)mComponent{
+    if ([self.pickerDelegate  respondsToSelector:@selector(pickerView:titleForRow:forComponent:)]) {
+        return [self.pickerDelegate pickerView:mPickerView titleForRow:mRow forComponent:mComponent];
+    }
+    return self.items[mRow];
 }
 //- (UIView *)pickerView:(UIPickerView *)pickerView
 //            viewForRow:(NSInteger)row

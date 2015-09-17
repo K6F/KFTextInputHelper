@@ -81,16 +81,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="kfLeftLabelText" value="测试："/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOc-LI-J8K" customClass="KFTextField">
-                                <rect key="frame" x="200" y="302" width="200" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PhL-o0-ORV"/>
-                                    <constraint firstAttribute="width" constant="200" id="S9j-qG-Zng"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Q-Hx-YOT" customClass="KFTextField">
                                 <rect key="frame" x="200" y="350" width="200" height="40"/>
                                 <animations/>
@@ -137,6 +127,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hpe-Ay-28W"/>
                                     <constraint firstAttribute="width" constant="200" id="kRs-Ry-Qb1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOc-LI-J8K" customClass="KFDatePickerTextField">
+                                <rect key="frame" x="200" y="302" width="200" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PhL-o0-ORV"/>
+                                    <constraint firstAttribute="width" constant="200" id="S9j-qG-Zng"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

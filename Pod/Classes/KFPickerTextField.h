@@ -11,12 +11,20 @@
 
 typedef void(^KFTextFieldCompletionBlock)(NSInteger row,NSInteger component);
 
+@protocol KFPickerTextFieldDataSource <UIPickerViewDataSource>
+@end
+@protocol KFPickerTextFieldDelegate <NSObject>
+@optional
+- (NSString *)pickerView:(UIPickerView *)mPickerView titleForRow:(NSInteger)mRow forComponent:(NSInteger)mComponent;
+@end
+
+
 @interface KFPickerTextField : KFTextField
 @property (nonatomic) NSUInteger selectedIndex;
 @property (nonatomic,assign) CGPoint rectInsetPoint; // default is (10, 5)
 @property (nonatomic,assign) NSInteger maxTextLength; // default is  140
-@property (nonatomic,assign) id<UIPickerViewDataSource> pickerDataSource;
-@property (nonatomic,assign) id <UIPickerViewDelegate>  pickerDelegate;
+@property (nonatomic,assign) id<KFPickerTextFieldDataSource> pickerDataSource;
+@property (nonatomic,assign) id <KFPickerTextFieldDelegate>  pickerDelegate;
 
 -(void)setPickerItems:(NSArray *)pickerItems;
 -(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldCompletionBlock) completion;

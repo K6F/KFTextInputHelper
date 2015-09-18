@@ -11,6 +11,7 @@
 @class KFTextInputHelper;
 @interface UIView (KFTextInputHelper)
 @property (atomic, retain)KFTextInputHelper *kfInputViewHelper;
+@property (nonatomic, readonly)UIViewController *kfParentViewController;
 @end
 
 @interface KFTextInputHelper : NSObject

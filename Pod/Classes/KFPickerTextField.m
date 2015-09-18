@@ -7,6 +7,7 @@
 //
 
 #import "KFPickerTextField.h"
+#import "KFTextInputHelper.h"
 
 @interface KFPickerTextField () <UIPickerViewDelegate, UIPickerViewDataSource>{
     KFTextFieldCompletionBlock pCompletionBlock;
@@ -29,6 +30,7 @@
 }
 -(void)setPickerItems:(NSArray *)pickerItems andSelect:(NSUInteger) idx{
     self.items = pickerItems;
+    [self kf_reloadDate];
     if (pickerItems && pickerItems.count > 0) {
         // 数组含有有效值
         self.selectedIndex = idx;
@@ -40,6 +42,8 @@
 }
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    if (!self.kfParentViewController.view.kfInputViewHelper)
+        self.kfParentViewController.view.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
     if (![self.inputView isKindOfClass:[UIPickerView class]]) {
         self.inputView = self.pPickerView;
     }
@@ -92,7 +96,6 @@
         pCompletionBlock(row,component);
     }
 }
-
 
 - (BOOL)validate{
     self.backgroundColor = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];  

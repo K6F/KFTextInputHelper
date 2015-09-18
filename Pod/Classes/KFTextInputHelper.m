@@ -28,6 +28,15 @@ static char mInputViewHelperKey;
 - (KFTextInputHelper *)kfInputViewHelper{
     return objc_getAssociatedObject(self, &mInputViewHelperKey);
 }
+- (UIViewController *)kfParentViewController{
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
 
 @end
 

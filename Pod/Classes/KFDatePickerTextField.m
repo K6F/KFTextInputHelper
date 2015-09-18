@@ -7,6 +7,7 @@
 //
 
 #import "KFDatePickerTextField.h"
+#import "KFTextInputHelper.h"
 
 @interface KFDatePickerTextField ()
 // UI
@@ -31,6 +32,8 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    if (!self.kfParentViewController.view.kfInputViewHelper)
+        self.kfParentViewController.view.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;
     }

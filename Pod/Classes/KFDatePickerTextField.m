@@ -26,8 +26,6 @@
     self.kfStartDate = mStartDate;
     self.kfSelectedDate = mSelectedDate;
     self.pChangedBlock = mChangedBlock;
-    self.pDatePicker.minimumDate = mStartDate;
-    self.pDatePicker.date = mSelectedDate;
     self.pDatePicker.datePickerMode = mDateMode;
 }
 
@@ -52,12 +50,14 @@
 }
 #pragma mark - Setter & Getter
 - (void)setStartDate:(NSDate *)mDate{
+    if (!mDate) return;
     _kfStartDate = mDate;
     self.pDatePicker.minimumDate = mDate;
     if ([self.kfSelectedDate earlierDate:mDate])
         self.kfSelectedDate = mDate;
 }
 - (void)setSelectedDate:(NSDate *)mDate{
+    if (!mDate) return;
     _kfSelectedDate = mDate;
     self.pDatePicker.date = mDate;
     [self p_updateTextWithDate:mDate];

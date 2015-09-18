@@ -28,4 +28,6 @@ typedef void(^KFTextFieldCompletionBlock)(NSInteger row,NSInteger component);
 
 -(void)setPickerItems:(NSArray *)pickerItems;
 -(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldCompletionBlock) completion;
+
+- (void)kf_reloadDate;
 @end

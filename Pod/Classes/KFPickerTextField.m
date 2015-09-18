@@ -35,7 +35,9 @@
         self.text = [self.items objectAtIndex:0];
     }
 }
-
+- (void)kf_reloadDate{
+    [self.pPickerView reloadAllComponents];
+}
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (![self.inputView isKindOfClass:[UIPickerView class]]) {
@@ -85,15 +87,14 @@
      didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component{
     self.selectedIndex = row;
-    self.text = self.items[row];
+    self.text = [self pickerView:pickerView titleForRow:row forComponent:component];
     if (pCompletionBlock) {
         pCompletionBlock(row,component);
     }
 }
 
 
-- (BOOL)validate
-{
+- (BOOL)validate{
     self.backgroundColor = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];  
     [self setBackgroundColor:[UIColor whiteColor]];
     return YES;

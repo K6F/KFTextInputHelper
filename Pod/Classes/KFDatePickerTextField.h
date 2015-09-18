@@ -11,9 +11,14 @@
 typedef void(^KFDateChangedBlock) (NSDate *bDate, NSString *bDateString);
 
 @interface KFDatePickerTextField : UITextField
-@property (nonatomic) NSDate *kfStartDate;
-@property (nonatomic) NSDate *kfSelectedDate;
+// mininum date of date picker
+@property (nonatomic, setter=setStartDate:) NSDate *kfStartDate;
+// selected date of date picker
+@property (nonatomic, setter=setSelectedDate:) NSDate *kfSelectedDate;
+// setup method
 - (void)kf_setupWithStartDate:(NSDate *)mStartDate
                  selectedDate:(NSDate *)mSelectedDate
+                  dateFormate:(NSString *)mDateFormate
+                     dateMode:(UIDatePickerMode)mDateMode
                   dateChanged:(KFDateChangedBlock)mChangedBlock;
 @end

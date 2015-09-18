@@ -48,6 +48,15 @@
     }
 }
 #pragma mark - Setter & Getter
+- (void)setStartDate:(NSDate *)mDate{
+    _kfStartDate = mDate;
+    self.pDatePicker.minimumDate = mDate;
+}
+- (void)setSelectedDate:(NSDate *)mDate{
+    _kfSelectedDate = mDate;
+    self.pDatePicker.date = mDate;
+}
+
 - (UIDatePicker *)pDatePicker{
     if (!_pDatePicker) {
         _pDatePicker = [[UIDatePicker alloc]init];

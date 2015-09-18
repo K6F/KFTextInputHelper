@@ -48,6 +48,9 @@
         self.enabled = YES;
     }
     [KFTextInputHelper helperInContainerView:self];
+    if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
+        self.inputView = self.pDatePicker;
+    }
 }
 #pragma mark - Methods
 - (void)p_DatePickerValueChanged:(UIDatePicker *)mDatePicker{

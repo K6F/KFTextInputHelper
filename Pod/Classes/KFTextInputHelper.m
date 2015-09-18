@@ -72,7 +72,13 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     CGColorRef pOriginalBorderColor;
     CGFloat pOriginalCornerRadius;
 }
-
++ (void)helperInContainerView:(UIView *)mContainerView{
+    UIViewController *mController = mContainerView.kfParentViewController;
+    @synchronized(mController.view.kfInputViewHelper) {
+        if (!mController.view.kfInputViewHelper)
+            mController.view.kfInputViewHelper = [[KFTextInputHelper alloc] initWithContainerView:mController.view];
+    }
+}
 + (instancetype)helperWithContainerView:(UIView *)mContainerView{
     return [[KFTextInputHelper alloc] initWithContainerView:mContainerView];
 }

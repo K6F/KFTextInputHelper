@@ -39,8 +39,7 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    if (!self.kfParentViewController.view.kfInputViewHelper)
-        self.kfParentViewController.view.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
+    [KFTextInputHelper helperInContainerView:self];
     if (pIsInit) {
         pIsInit = NO;
         self.enabled = YES;

@@ -42,11 +42,7 @@
 }
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    if (!self.kfParentViewController.view.kfInputViewHelper)
-        self.kfParentViewController.view.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
-    if (![self.inputView isKindOfClass:[UIPickerView class]]) {
-        self.inputView = self.pPickerView;
-    }
+    [KFTextInputHelper helperInContainerView:self];
 }
 
 #pragma mark - UIPickerViewDataSource

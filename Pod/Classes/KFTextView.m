@@ -27,8 +27,7 @@
         pIsInit = NO;
         self.editable = YES;
     }
-    if (!self.kfParentViewController.view.kfInputViewHelper)
-        self.kfParentViewController.view.kfInputViewHelper = [KFTextInputHelper helperWithContainerView:self.superview];
+    [KFTextInputHelper helperInContainerView:self];
 }
 
 @end

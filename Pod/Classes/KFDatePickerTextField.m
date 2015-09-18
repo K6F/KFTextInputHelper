@@ -40,21 +40,27 @@
 #pragma mark - Methods
 - (void)p_DatePickerValueChanged:(UIDatePicker *)mDatePicker{
     self.kfSelectedDate = mDatePicker.date;
+    [self p_updateTextWithDate:self.kfSelectedDate];
+}
+- (void)p_updateTextWithDate:(NSDate *)mDate{
     NSDateFormatter *mDateFormatter = [[NSDateFormatter alloc] init];
     mDateFormatter.dateFormat = @"EEE MM月dd";
-    self.text = [mDateFormatter stringFromDate:self.kfSelectedDate];
+    self.text = [mDateFormatter stringFromDate:mDate];
     if (self.pChangedBlock) {
-        self.pChangedBlock(self.kfSelectedDate, self.text);
+        self.pChangedBlock(mDate, self.text);
     }
 }
 #pragma mark - Setter & Getter
 - (void)setStartDate:(NSDate *)mDate{
     _kfStartDate = mDate;
     self.pDatePicker.minimumDate = mDate;
+    if ([self.kfSelectedDate earlierDate:mDate])
+        self.kfSelectedDate = mDate;
 }
 - (void)setSelectedDate:(NSDate *)mDate{
     _kfSelectedDate = mDate;
     self.pDatePicker.date = mDate;
+    [self p_updateTextWithDate:mDate];
 }
 
 - (UIDatePicker *)pDatePicker{

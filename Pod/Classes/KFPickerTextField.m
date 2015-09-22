@@ -109,7 +109,7 @@
 - (void)p_keyboardWasShown:(NSNotification*)aNotification{
     KFTextInputHelper *mHelper = [KFTextInputHelper helperWithContainerView:self];
     if (![mHelper.kfCurrentFirstResponder isEqual:self]) return;
-    [self pickerView:self.pPickerView didSelectRow:0 inComponent:0];
+    [self pickerView:self.pPickerView didSelectRow:self.selectedIndex inComponent:0];
 }
 
 

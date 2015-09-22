@@ -39,7 +39,7 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [KFTextInputHelper helperInContainerView:self];
+    [KFTextInputHelper setupHelperWithContainerView:self];
     if (pIsInit) {
         pIsInit = NO;
         self.enabled = YES;

@@ -10,42 +10,60 @@
 #import "KFTextInputHelper.h"
 
 @interface KFPickerTextField () <UIPickerViewDelegate, UIPickerViewDataSource>{
-    KFTextFieldCompletionBlock pCompletionBlock;
+    KFTextFieldSelectBlock pCompletionBlock;
 }
 @property (nonatomic) NSArray* items;
 @property (nonatomic, strong) UIPickerView *pPickerView;
+@property (nonatomic, weak)KFTextInputHelper *pInputHelper;
 @end
 
 
 
 @implementation KFPickerTextField
 @synthesize items,selectedIndex;
-
+#pragma mark - Public Methods
 -(void)setPickerItems:(NSArray *)mPickerItems{
-    [self setPickerItems:mPickerItems andSelect:0];
+    self.items = mPickerItems;
 }
--(void)setPickerItems:(NSArray *)mPickerItems completion:(KFTextFieldCompletionBlock)mCompletion{
+-(void)setPickerItems:(NSArray *)mPickerItems
+            andSelect:(NSUInteger)mIndex{
+    self.items = mPickerItems;
+    [self kf_reloadDate];
+    if (mPickerItems && mPickerItems.count > mIndex) {
+        // 数组含有有效值
+        self.selectedIndex = mIndex;
+        self.text = [self.items objectAtIndex:0];
+    }
+}
+-(void)setPickerItems:(NSArray *)mPickerItems
+           completion:(KFTextFieldSelectBlock)mCompletion{
     pCompletionBlock = mCompletion;
     [self setPickerItems:mPickerItems];
 }
--(void)setPickerItems:(NSArray *)pickerItems andSelect:(NSUInteger) idx{
-    self.items = pickerItems;
-    [self kf_reloadDate];
-    if (pickerItems && pickerItems.count > 0) {
-        // 数组含有有效值
-        self.selectedIndex = idx;
-        self.text = [self.items objectAtIndex:0];
-    }
+-(void)setPickerItems:(NSArray *)mPickerItems
+           completion:(KFTextFieldSelectBlock)mCompletion
+            andSelect:(NSUInteger)mIndex{
+    pCompletionBlock = mCompletion;
+    [self setPickerItems:mPickerItems andSelect:mIndex];
 }
 - (void)kf_reloadDate{
     [self.pPickerView reloadAllComponents];
 }
+#pragma mark - Init
+
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [KFTextInputHelper helperInContainerView:self];
+    [KFTextInputHelper setupHelperWithContainerView:self];
     if (![self.inputView isKindOfClass:[UIPickerView class]]) {
         self.inputView = self.pPickerView;
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(p_keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - UIPickerViewDataSource
@@ -71,20 +89,6 @@
     }
     return self.items[mRow];
 }
-//- (UIView *)pickerView:(UIPickerView *)pickerView
-//            viewForRow:(NSInteger)row
-//          forComponent:(NSInteger)component
-//           reusingView:(UIView *)view {
-//    if ([self.pickerDelegate respondsToSelector:@selector(pickerView:viewForRow:forComponent:reusingView:)]) {
-//        return [self.pickerDelegate pickerView:pickerView viewForRow:row forComponent:component reusingView:view];
-//    }
-//    UILabel *lblTitle = [[UILabel alloc] init];
-//    lblTitle.frame = CGRectMake(0, 0,self.superview.bounds.size.width, 32);
-//    lblTitle.textAlignment = NSTextAlignmentCenter;
-//    lblTitle.backgroundColor = [UIColor clearColor];
-//    lblTitle.text = [self.items objectAtIndex:row];
-//    return lblTitle;
-//}
 
 -(void)pickerView:(UIPickerView *)pickerView
      didSelectRow:(NSInteger)row
@@ -101,8 +105,15 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     return YES;
 }
+#pragma mark - Private methods
+- (void)p_keyboardWasShown:(NSNotification*)aNotification{
+    KFTextInputHelper *mHelper = [KFTextInputHelper helperWithContainerView:self];
+    if (![mHelper.kfCurrentFirstResponder isEqual:self]) return;
+    [self pickerView:self.pPickerView didSelectRow:0 inComponent:0];
+}
 
-#pragma mark - UITextField inputView help
+
+#pragma mark - Setter & Getter
 - (UIPickerView *)pPickerView {
     if (!_pPickerView) {
         _pPickerView = [[UIPickerView alloc] init];

@@ -15,9 +15,11 @@
 @end
 
 @interface KFTextInputHelper : NSObject
-+ (void)helperInContainerView:(UIView *)mContainerView;
+/** setup helper */
++ (void)setupHelperWithContainerView:(UIView *)mContainerView;
+/** get helper instance */
++ (instancetype)helperWithContainerView:(UIView *)mContainerView;
 - (instancetype)initWithContainerView:(UIView *)mContainerView;
-@end
-@interface KFTextInputHelper(Deprecated)
-+ (instancetype)helperWithContainerView:(UIView *)mContainerView __deprecated_msg("Method deprecated in 0.2.0 User `helperInContainerView:`");
+
+@property (weak, nonatomic) id kfCurrentFirstResponder;
 @end

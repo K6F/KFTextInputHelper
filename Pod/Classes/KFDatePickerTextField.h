@@ -18,7 +18,7 @@ typedef void(^KFDateChangedBlock) (NSDate *bDate, NSString *bDateString);
 // setup method
 - (void)kf_setupWithStartDate:(NSDate *)mStartDate
                  selectedDate:(NSDate *)mSelectedDate
-                  dateFormate:(NSString *)mDateFormate
+                   dateFormat:(NSString *)mDateFormat
                      dateMode:(UIDatePickerMode)mDateMode
                   dateChanged:(KFDateChangedBlock)mChangedBlock;
 @end

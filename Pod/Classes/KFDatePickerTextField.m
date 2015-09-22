@@ -23,7 +23,7 @@
 
 - (void)kf_setupWithStartDate:(NSDate *)mStartDate
                  selectedDate:(NSDate *)mSelectedDate
-                  dateFormate:(NSString *)mDateFormate
+                   dateFormat:(NSString *)mDateFormat
                      dateMode:(UIDatePickerMode)mDateMode
                   dateChanged:(KFDateChangedBlock)mChangedBlock{
     self.kfStartDate = mStartDate;
@@ -47,12 +47,20 @@
         pIsInit = NO;
         self.enabled = YES;
     }
-    [KFTextInputHelper helperInContainerView:self];
+    [KFTextInputHelper setupHelperWithContainerView:self];
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(p_keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
 }
-#pragma mark - Methods
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Private methods
 - (void)p_DatePickerValueChanged:(UIDatePicker *)mDatePicker{
     self.kfSelectedDate = mDatePicker.date;
     [self p_updateTextWithDate:self.kfSelectedDate];
@@ -64,6 +72,11 @@
     if (self.pChangedBlock) {
         self.pChangedBlock(mDate, self.text);
     }
+}
+- (void)p_keyboardWasShown:(NSNotification*)aNotification{
+    KFTextInputHelper *mHelper = [KFTextInputHelper helperWithContainerView:self];
+    if (![mHelper.kfCurrentFirstResponder isEqual:self]) return;
+    [self p_DatePickerValueChanged:self.pDatePicker];
 }
 #pragma mark - Setter & Getter
 - (void)setStartDate:(NSDate *)mDate{

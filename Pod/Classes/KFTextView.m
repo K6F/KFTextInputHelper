@@ -27,7 +27,7 @@
         pIsInit = NO;
         self.editable = YES;
     }
-    [KFTextInputHelper helperInContainerView:self];
+    [KFTextInputHelper setupHelperWithContainerView:self];
 }
 
 @end

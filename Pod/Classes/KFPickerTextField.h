@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KFTextField.h"
 
-typedef void(^KFTextFieldCompletionBlock)(NSInteger row,NSInteger component);
+typedef void(^KFTextFieldSelectBlock)(NSInteger row,NSInteger component);
 
 @protocol KFPickerTextFieldDataSource <UIPickerViewDataSource>
 @end
@@ -27,7 +27,9 @@ typedef void(^KFTextFieldCompletionBlock)(NSInteger row,NSInteger component);
 @property (nonatomic,assign) id <KFPickerTextFieldDelegate>  pickerDelegate;
 
 -(void)setPickerItems:(NSArray *)pickerItems;
--(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldCompletionBlock) completion;
+-(void)setPickerItems:(NSArray *)pickerItems andSelect:(NSUInteger)index;
+-(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldSelectBlock)completion;
+-(void)setPickerItems:(NSArray *)pickerItems completion:(KFTextFieldSelectBlock)completion andSelect:(NSUInteger)index;
 
 - (void)kf_reloadDate;
 @end

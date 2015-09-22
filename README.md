@@ -20,11 +20,15 @@ To use KFTextInputHelper, invoke init method and it would setup automatically.
 ```objective-c
 - (void) viewDidLoad{
 	[super viewDidLoad];
-	KFTextInputHelper *helper;
-	helper = [KFTextInputHelper helperWithContainerView:self.view];
-	// [KFTextInputHelper alloc] initWithContainerView:self.view];
+	[KFTextInputHelper setupHelperWithContainerView:self.view];
 }
-``` 
+```
+
+You can get instance of helper by 
+
+```objective-c
+KFTextInputHelper *helper = [KFTextInputHelper helperWithContainerView:self.view];
+```
 
 ## Requirements
 

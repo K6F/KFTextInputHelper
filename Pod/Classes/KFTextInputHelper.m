@@ -47,8 +47,8 @@ static char mInputViewHelperKey;
 @class KFTextView;
 
 @interface KFTextInputHelper ()<UITextFieldDelegate,UITextViewDelegate>
-@property (nonatomic, weak)UIView *pContainerView;
-@property (nonatomic, weak)UIView<UITextInput> *pCurrentInputView;
+@property (weak, nonatomic)UIView *pContainerView;
+@property (weak, nonatomic)UIView<UITextInput> *pCurrentInputView;
 @property (nonatomic) NSInteger pInputViewsCount;
 @property (nonatomic) NSArray *pInputViews;
 @property (nonatomic) UITapGestureRecognizer *pTapGesture;
@@ -72,7 +72,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     CGColorRef pOriginalBorderColor;
     CGFloat pOriginalCornerRadius;
 }
-+ (void)helperInContainerView:(UIView *)mContainerView{
++ (void)setupHelperWithContainerView:(UIView *)mContainerView{
     UIViewController *mController = mContainerView.kfParentViewController;
     @synchronized(mController.view.kfInputViewHelper) {
         if (!mController.view.kfInputViewHelper)
@@ -80,7 +80,8 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     }
 }
 + (instancetype)helperWithContainerView:(UIView *)mContainerView{
-    return [[KFTextInputHelper alloc] initWithContainerView:mContainerView];
+    UIViewController *mController = mContainerView.kfParentViewController;
+    return mController.view.kfInputViewHelper;
 }
 - (instancetype)initWithContainerView:(UIView *)mContainerView{
     self = [super init];
@@ -134,8 +135,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
              withDuration:mDuration];
 }
 
-- (void)p_keyboardWillHide:(NSNotification *) notification
-{
+- (void)p_keyboardWillHide:(NSNotification *) notification{
     self.pIsKeyboardShown    = NO;
     [self p_removeTapGesture];
     NSDictionary *mInfo      = [notification userInfo];
@@ -179,11 +179,13 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     [self p_addEditingObserver];
     self.pIsDoneCommand = NO;
     self.pCurrentInputView = notification.object;
+    self.kfCurrentFirstResponder = notification.object;
     [notification.object becomeFirstResponder];
 }
 
 -(void)p_textDidEndEditing:(NSNotification *) notification{
     [self pCancelMarkBorderFirstResponder:notification.object];
+    self.kfCurrentFirstResponder = nil;
     [self p_removeEditingObserver];
     
     NSDictionary* info = [notification userInfo];

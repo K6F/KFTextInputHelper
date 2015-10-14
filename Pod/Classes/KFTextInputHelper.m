@@ -199,6 +199,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 /** Find UITextInput in containerView*/
 -(void)p_markTagOfInputViewIn:(UIView*)mView{
     [mView.subviews enumerateObjectsUsingBlock:^(UIView * subView, NSUInteger idx, BOOL *stop) {
+        if ([subView isKindOfClass:[UIWebView class]]) return;
         if (![subView conformsToProtocol:@protocol(UITextInput)]){
             [self p_markTagOfInputViewIn:subView];
             return;

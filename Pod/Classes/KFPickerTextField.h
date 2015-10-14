@@ -16,6 +16,7 @@ typedef void(^KFTextFieldSelectBlock)(NSInteger row,NSInteger component);
 @protocol KFPickerTextFieldDelegate <NSObject>
 @optional
 - (NSString *)pickerView:(UIPickerView *)mPickerView titleForRow:(NSInteger)mRow forComponent:(NSInteger)mComponent;
+- (void)pickerView:(UIPickerView *)mPickerView didSelectRow:(NSInteger)mRow inComponent:(NSInteger)mComponent;
 @end
 
 

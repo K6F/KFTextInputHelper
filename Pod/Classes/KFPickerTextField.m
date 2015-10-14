@@ -98,6 +98,9 @@
     if (pCompletionBlock) {
         pCompletionBlock(row,component);
     }
+    if ([self.pickerDelegate respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)]) {
+        [self.pickerDelegate pickerView:pickerView didSelectRow:row inComponent:component];
+    }
 }
 
 - (BOOL)validate{

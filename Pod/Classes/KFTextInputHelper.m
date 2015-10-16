@@ -87,10 +87,13 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     self = [super init];
     if (self) {
         self.pContainerView = mContainerView;
-        [self p_markTagOfInputViewIn:mContainerView];
-        [self p_setupInputViewIn:mContainerView];
+        [self reloadInputs];
     }
     return self;
+}
+- (void)reloadInputs{
+    [self p_markTagOfInputViewIn:self.pContainerView];
+    [self p_setupInputViewIn:self.pContainerView];
 }
 
 #pragma mark - keyboard observer

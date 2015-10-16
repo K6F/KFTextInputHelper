@@ -20,6 +20,8 @@
 /** get helper instance */
 + (instancetype)helperWithContainerView:(UIView *)mContainerView;
 - (instancetype)initWithContainerView:(UIView *)mContainerView;
+/** setup id<UIInput> in containerView */
+- (void)reloadInputs;
 
 @property (weak, nonatomic) id kfCurrentFirstResponder;
 @end

@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "KFTextInputHelper"
-  s.version          = "0.2.5"
+  s.version          = "0.2.6"
   s.summary          = "A short description of KFTextInputHelper."
   s.description      = <<-DESC
                        An optional longer description of KFTextInputHelper

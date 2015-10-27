@@ -36,9 +36,14 @@
     }
     return self;
 }
-
+-  (void)layoutSubviews{
+    [super layoutSubviews];
+    [self p_setupHelper];
+}
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+}
+- (void)p_setupHelper{
     [KFTextInputHelper setupHelperWithContainerView:self];
     if (pIsInit) {
         pIsInit = NO;
@@ -46,6 +51,8 @@
     }
 }
 
+     
+     
 - (void)updateConstraints{
     [super updateConstraints];
     [self p_drawLeftLabel];

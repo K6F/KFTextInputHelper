@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KFTextField.h"
 
 typedef void(^KFDateChangedBlock) (NSDate *bDate, NSString *bDateString);
 
-@interface KFDatePickerTextField : UITextField
+@interface KFDatePickerTextField : KFTextField
 // mininum date of date picker
 @property (nonatomic, setter=setStartDate:) NSDate *kfStartDate;
 // selected date of date picker

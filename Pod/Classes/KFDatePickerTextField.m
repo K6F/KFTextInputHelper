@@ -41,13 +41,13 @@
     }
     return self;
 }
-- (void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
+- (void)layoutSubviews{
+    [super layoutSubviews];
     if (pIsInit) {
         pIsInit = NO;
         self.enabled = YES;
     }
-    [KFTextInputHelper setupHelperWithContainerView:self];
+    
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;
     }
@@ -56,6 +56,7 @@
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
 }
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

@@ -24,6 +24,7 @@
     CGColorRef originalBorderColor;
     float originalBorderWidth;
     BOOL pIsInit;
+    BOOL pOriginEnabled;
 }
 
 #pragma mark - Inherit
@@ -32,6 +33,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         pIsInit = YES;
+        pOriginEnabled = self.enabled;
         self.enabled = NO;
     }
     return self;
@@ -47,12 +49,11 @@
     [KFTextInputHelper setupHelperWithContainerView:self];
     if (pIsInit) {
         pIsInit = NO;
-        self.enabled = YES;
+        self.enabled = pOriginEnabled;
     }
 }
 
-     
-     
+
 - (void)updateConstraints{
     [super updateConstraints];
     [self p_drawLeftLabel];

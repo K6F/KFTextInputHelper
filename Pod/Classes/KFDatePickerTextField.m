@@ -17,9 +17,7 @@
 @property (nonatomic, strong) KFDateChangedBlock pChangedBlock; // block called after date changed
 @end
 
-@implementation KFDatePickerTextField{
-    BOOL pIsInit;
-}
+@implementation KFDatePickerTextField
 
 - (void)kf_setupWithStartDate:(NSDate *)mStartDate
                  selectedDate:(NSDate *)mSelectedDate
@@ -35,18 +33,10 @@
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
-    if (self) {
-        pIsInit = YES;
-        self.enabled = NO;
-    }
     return self;
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    if (pIsInit) {
-        pIsInit = NO;
-        self.enabled = YES;
-    }
     
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;

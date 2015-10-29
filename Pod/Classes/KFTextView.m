@@ -11,12 +11,14 @@
 @implementation KFTextView{
     KFTextInputHelper *_kfInputHelper;
     BOOL pIsInit;
+    BOOL pOriginEnabled;
 }
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
         pIsInit = YES;
+        pOriginEnabled = self.editable;
         self.editable = NO;
     }
     return self;
@@ -25,7 +27,7 @@
     [super drawRect:rect];
     if (pIsInit) {
         pIsInit = NO;
-        self.editable = YES;
+        self.editable = pOriginEnabled;
     }
     [KFTextInputHelper setupHelperWithContainerView:self];
 }

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 #import "KFTextInputHelperProtocol.h"
-#import "KFPickerTextField.h"
+#import "KFPickerField.h"
 #import "KFTextField.h"
 #import "KFTextInputHelper.h"
 #import "KFTextView.h"

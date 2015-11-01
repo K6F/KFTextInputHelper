@@ -7,10 +7,10 @@
 //
 
 #import "KFViewController.h"
-#import "KFPickerTextField.h"
+#import "KFPickerField.h"
 
 @interface KFViewController ()
-@property (weak, nonatomic) IBOutlet KFPickerTextField *pPickerTextField;
+@property (weak, nonatomic) IBOutlet KFPickerField *pPickerTextField;
 
 @end
 

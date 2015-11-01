@@ -42,7 +42,7 @@ static char mInputViewHelperKey;
 
 // ================================================================================================================== //
 
-@class KFPickerTextField;
+@class KFPickerField;
 @class KFTextField;
 @class KFTextView;
 

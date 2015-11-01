@@ -37,7 +37,6 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;
     }
@@ -87,7 +86,9 @@
 - (UIDatePicker *)pDatePicker{
     if (!_pDatePicker) {
         _pDatePicker = [[UIDatePicker alloc]init];
-        _pDatePicker.locale = [NSLocale systemLocale];
+        NSUserDefaults *mUser = [NSUserDefaults standardUserDefaults];
+        NSString *mLanguage = [(NSArray *)[mUser objectForKey:@"AppleLanguages"] firstObject];
+        _pDatePicker.locale = [NSLocale localeWithLocaleIdentifier:mLanguage];
         [_pDatePicker addTarget:self
                          action:@selector(p_DatePickerValueChanged:)
                forControlEvents:UIControlEventValueChanged];

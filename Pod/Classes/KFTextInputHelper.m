@@ -96,7 +96,8 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     [self p_setupInputViewIn:self.pContainerView];
 }
 
-#pragma mark - keyboard observer
+#pragma mark - Methods
+#pragma mark -- Keyboard Observe
 -(void)p_addEditingObserver{
     NSNotificationCenter * noticeCenter = [NSNotificationCenter defaultCenter];
     [noticeCenter addObserver:self
@@ -143,7 +144,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     [self p_removeTapGesture];
     NSDictionary *mInfo      = [notification userInfo];
     NSTimeInterval mDuration = [mInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    [self pCancelMoveAtopKeyboard:mDuration];
+    [self p_cancelMoveAtopKeyboard:mDuration];
 }
 
 /** check the tap, hide keyboard automatically */
@@ -152,7 +153,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 }
 
 
-#pragma mark - Editing Notification
+#pragma mark -- Editing Notification
 /** add notification to text input view */
 -(void)p_addNotification:(id<UITextInput>)mInputView{
     NSNotificationCenter * noticeCenter = [NSNotificationCenter defaultCenter];
@@ -178,7 +179,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 }
 
 -(void)p_textDidBeginEditing:(NSNotification *) notification{
-    [self p_MarkBorderFirstResponder:notification.object];
+    [self p_markBorderFirstResponder:notification.object];
     [self p_addEditingObserver];
     self.pIsDoneCommand = NO;
     self.pCurrentInputView = notification.object;
@@ -187,7 +188,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 }
 
 -(void)p_textDidEndEditing:(NSNotification *) notification{
-    [self pCancelMarkBorderFirstResponder:notification.object];
+    [self p_cancelMarkBorderFirstResponder:notification.object];
     self.kfCurrentFirstResponder = nil;
     [self p_removeEditingObserver];
     
@@ -195,10 +196,10 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     NSValue *durationValue = info[UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval duration;
     [durationValue getValue:&duration];
-    [self pCancelMoveAtopKeyboard:duration];
+    [self p_cancelMoveAtopKeyboard:duration];
 }
 
-#pragma mark - InputAccessoryView
+#pragma mark -- InputAccessoryView
 /** Find UITextInput in containerView*/
 -(void)p_markTagOfInputViewIn:(UIView*)mView{
     [mView.subviews enumerateObjectsUsingBlock:^(UIView * subView, NSUInteger idx, BOOL *stop) {
@@ -233,7 +234,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
                                                          action:@selector(p_nextButtonTapped:)];
-    mBarButtonHide     = [[UIBarButtonItem alloc] initWithImage:[self imageNamed:@"KF_KeyboardDown@3x"]
+    mBarButtonHide     = [[UIBarButtonItem alloc] initWithImage:[self p_imageNamed:@"KF_KeyboardDown@3x"]
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
                                                          action:@selector(p_hideButtonTapped:)];
@@ -244,7 +245,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     mFlexBarItem       = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                        target:nil
                                                                        action:nil];
-    mSeparateLine      = [[UIBarButtonItem alloc] initWithImage:[self imageNamed:@"KF_KeyboardSeparateLine@3x"]
+    mSeparateLine      = [[UIBarButtonItem alloc] initWithImage:[self p_imageNamed:@"KF_KeyboardSeparateLine@3x"]
                                                           style:UIBarButtonItemStylePlain
                                                          target:nil
                                                          action:nil];
@@ -318,7 +319,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 }
 
 
-#pragma mark - keyboard
+#pragma mark -- Keyboard
 -(void)p_moveInputView:(UIView *)mInputView
      atopKeyboardFrame:(CGRect)mKeyboardFrame
           withDuration:(NSTimeInterval)mDuration{
@@ -337,7 +338,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
         [UIView commitAnimations];
     });
 }
--(void)pCancelMoveAtopKeyboard:(NSTimeInterval)mDuration{
+-(void)p_cancelMoveAtopKeyboard:(NSTimeInterval)mDuration{
     if (pMoveOffsetY > 0)return;
     CGRect originFrame = CGRectMake(0.f,0.f, self.pContainerView.window.frame.size.width, self.pContainerView.window.frame.size.height);
     if (self.pIsDoneCommand) {
@@ -351,23 +352,28 @@ static const int kInputViewDoneButtonTagKey       = 92787;
     pMoveOffsetY = 0.f;
 }
 
-#pragma mark - border
--(void)p_MarkBorderFirstResponder:(UIView *)mInputView{
+#pragma mark -- Border
+-(void)p_markBorderFirstResponder:(UIView *)mInputView{
     pOriginalBorderColor          = mInputView.layer.borderColor;
     pOriginalBorderWidth          = mInputView.layer.borderWidth;
     pOriginalCornerRadius         = mInputView.layer.cornerRadius;
     mInputView.layer.borderWidth  = 1.0f;
-    mInputView.layer.borderColor  = [[UIColor greenColor] CGColor];
+    if ([mInputView respondsToSelector:@selector(kfFocusBorderColor)]) {
+        UIColor *mTmpColor = [mInputView valueForKey:@"kfFocusBorderColor"];
+        mInputView.layer.borderColor  = mTmpColor.CGColor;
+    }else{
+        mInputView.layer.borderColor  = [[UIColor greenColor] CGColor];
+    }
     mInputView.layer.cornerRadius = 4.f;
 }
--(void)pCancelMarkBorderFirstResponder:(UIView *)mInputView{
+-(void)p_cancelMarkBorderFirstResponder:(UIView *)mInputView{
     mInputView.layer.borderWidth  = pOriginalBorderWidth;
     mInputView.layer.borderColor  = pOriginalBorderColor;
     mInputView.layer.cornerRadius = pOriginalCornerRadius;
 }
-#pragma mark - Resource
 
-- (UIImage *)imageNamed:(NSString *)mName{
+#pragma mark - Resource
+- (UIImage *)p_imageNamed:(NSString *)mName{
     NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"KFTextInputHelper"
                                                                             ofType:@"bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];

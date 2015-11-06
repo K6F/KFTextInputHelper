@@ -23,13 +23,31 @@
     }
     return self;
 }
-- (void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    [self p_setupHelper];
+}
+- (void)updateConstraints{
+    [super updateConstraints];
+}
+#pragma mark - Methods
+#pragma mark -- Private
+- (void)p_setupHelper{
+    [KFTextInputHelper setupHelperWithContainerView:self];
     if (pIsInit) {
         pIsInit = NO;
         self.editable = pOriginEnabled;
     }
-    [KFTextInputHelper setupHelperWithContainerView:self];
+}
+#pragma mark - Setter & Getter | Lazy Config
+#pragma mark -- Layer
+- (void)setKfBorderColor:(UIColor *)mBorderColor{
+    _kfBorderColor = mBorderColor;
+    self.layer.borderColor = mBorderColor.CGColor;
+}
+- (void)setKfBorderWidth:(CGFloat)mBorderWidth{
+    _kfBorderWidth = mBorderWidth;
+    self.layer.borderWidth = mBorderWidth;
 }
 
 @end

@@ -12,7 +12,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ###Use KFTextField, KFTextView
 ####Only In storyboard
 In storyboard, change the class of UITextField or UITextView
-to KFTextField or KFTextView
+to KFTextField or KFTextView  
+**IB_DESIGNABLE** supported!
 
 ### Use KFTextInputHelper
 To use KFTextInputHelper, invoke init method and it would setup automatically.

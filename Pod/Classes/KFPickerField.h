@@ -22,8 +22,6 @@ typedef void(^KFTextFieldSelectBlock)(NSInteger row,NSInteger component);
 
 @interface KFPickerField: KFTextField
 @property (nonatomic) NSUInteger selectedIndex;
-@property (nonatomic,assign) CGPoint rectInsetPoint; // default is (10, 5)
-@property (nonatomic,assign) NSInteger maxTextLength; // default is  140
 @property (nonatomic,assign) id<KFPickerFieldDataSource> pickerDataSource;
 @property (nonatomic,assign) id <KFPickerFieldDelegate>  pickerDelegate;
 

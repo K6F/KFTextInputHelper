@@ -18,46 +18,43 @@
 @end
 
 @implementation KFDatePickerField
+@synthesize kfStartDate,kfEndDate,kfSelectedDate,kfDateFormat;
+@synthesize pDatePicker;
 
 - (void)kf_setupWithStartDate:(NSDate *)mStartDate
                  selectedDate:(NSDate *)mSelectedDate
                    dateFormat:(NSString *)mDateFormat
                      dateMode:(UIDatePickerMode)mDateMode
                   dateChanged:(KFDateChangedBlock)mChangedBlock{
-    self.kfStartDate = mStartDate;
-    self.kfSelectedDate = mSelectedDate;
-    self.pChangedBlock = mChangedBlock;
+    self.kfStartDate                = mStartDate;
+    self.kfSelectedDate             = mSelectedDate;
+    self.kfDateFormat = kfDateFormat;
+    self.pChangedBlock              = mChangedBlock;
     self.pDatePicker.datePickerMode = mDateMode;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    return self;
-}
 - (void)layoutSubviews{
     [super layoutSubviews];
     if (![self.inputView isKindOfClass:[UIDatePicker class]]) {
         self.inputView = self.pDatePicker;
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(p_keyboardWasShown:)
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
     }
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(p_keyboardWasShown:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
 }
-
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Private methods
-- (void)p_DatePickerValueChanged:(UIDatePicker *)mDatePicker{
+- (void)p_datePickerValueChanged:(UIDatePicker *)mDatePicker{
     self.kfSelectedDate = mDatePicker.date;
     [self p_updateTextWithDate:self.kfSelectedDate];
 }
 - (void)p_updateTextWithDate:(NSDate *)mDate{
     NSDateFormatter *mDateFormatter = [[NSDateFormatter alloc] init];
-    mDateFormatter.dateFormat = @"EEE MM月dd";
+    mDateFormatter.dateFormat = self.kfDateFormat;
     self.text = [mDateFormatter stringFromDate:mDate];
     if (self.pChangedBlock) {
         self.pChangedBlock(mDate, self.text);
@@ -66,34 +63,46 @@
 - (void)p_keyboardWasShown:(NSNotification*)aNotification{
     KFTextInputHelper *mHelper = [KFTextInputHelper helperWithContainerView:self];
     if (![mHelper.kfCurrentFirstResponder isEqual:self]) return;
-    [self p_DatePickerValueChanged:self.pDatePicker];
+    [self p_datePickerValueChanged:self.pDatePicker];
 }
-#pragma mark - Setter & Getter
+#pragma mark - Setter & Getter | Lazy Config
 - (void)setStartDate:(NSDate *)mDate{
     if (!mDate) return;
-    _kfStartDate = mDate;
+    kfStartDate = mDate;
     self.pDatePicker.minimumDate = mDate;
     if ([self.kfSelectedDate earlierDate:mDate])
-        self.kfSelectedDate = mDate;
+    self.kfSelectedDate = mDate;
+}
+-(void)setEndDate:(NSDate *)mEndDate{
+    kfEndDate = mEndDate;
+    self.pDatePicker.maximumDate = mEndDate;
 }
 - (void)setSelectedDate:(NSDate *)mDate{
     if (!mDate) return;
-    _kfSelectedDate = mDate;
+    kfSelectedDate = mDate;
     self.pDatePicker.date = mDate;
     [self p_updateTextWithDate:mDate];
 }
-
+- (void)setDateFormat:(NSString *)mDateFormat{
+    kfDateFormat = mDateFormat;
+}
+- (NSString *)kfDateFormat{
+    if (!kfDateFormat) {
+        kfDateFormat = @"EEE MM/dd";
+    }
+    return kfDateFormat;
+}
 - (UIDatePicker *)pDatePicker{
-    if (!_pDatePicker) {
-        _pDatePicker = [[UIDatePicker alloc]init];
+    if (!pDatePicker) {
+        pDatePicker = [[UIDatePicker alloc]init];
         NSUserDefaults *mUserDefaults = [NSUserDefaults standardUserDefaults];
         NSArray *mLanguages = [mUserDefaults objectForKey:@"AppleLanguages"];
         NSString *mLocalization = mLanguages.firstObject;
-        _pDatePicker.locale = [NSLocale localeWithLocaleIdentifier:mLocalization];
-        [_pDatePicker addTarget:self
-                         action:@selector(p_DatePickerValueChanged:)
-               forControlEvents:UIControlEventValueChanged];
+        pDatePicker.locale = [NSLocale localeWithLocaleIdentifier:mLocalization];
+        [pDatePicker addTarget:self
+                        action:@selector(p_datePickerValueChanged:)
+              forControlEvents:UIControlEventValueChanged];
     }
-    return _pDatePicker;
+    return pDatePicker;
 }
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+IB_DESIGNABLE
 @interface KFTextView : UITextView
+
+#pragma mark - Layout
+@property (nonatomic) IBInspectable UIColor  *kfBorderColor;
+@property (nonatomic) IBInspectable UIColor  *kfFocusBorderColor;
+@property (nonatomic) IBInspectable CGFloat  kfBorderWidth;
 
 @end

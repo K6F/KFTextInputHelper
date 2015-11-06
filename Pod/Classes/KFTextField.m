@@ -26,6 +26,10 @@
     BOOL pIsInit;
     BOOL pOriginEnabled;
 }
+@synthesize kfBorderColor,kfBorderWidth,kfFocusBorderColor;
+@synthesize kfLeftText,kfLeftColor,kfLeftBackgroundColor,kfLeftWidth;
+@synthesize kfLeftBorderColor,kfLeftBorderWidth;
+@synthesize kfVerifyFailedBorderColor,kfVerifyPassedBorderColor;
 
 #pragma mark - Inherit
 
@@ -38,13 +42,19 @@
     }
     return self;
 }
+
 -  (void)layoutSubviews{
     [super layoutSubviews];
     [self p_setupHelper];
 }
-- (void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
+
+- (void)updateConstraints{
+    [super updateConstraints];
+    [self p_drawLeftLabel];
 }
+
+#pragma mark - Methods
+#pragma mark -- Private
 - (void)p_setupHelper{
     [KFTextInputHelper setupHelperWithContainerView:self];
     if (pIsInit) {
@@ -53,45 +63,34 @@
     }
 }
 
-
-- (void)updateConstraints{
-    [super updateConstraints];
-    [self p_drawLeftLabel];
-}
-
-#pragma mark - methods
-
 - (void)p_drawLeftLabel{
-    // Left label
+    // Check Left Label exist
     if (!_pLeftLabel) return;
-    if (self.kfLeftLabelBackgroundColor) {
-        self.pLeftLabel.backgroundColor = self.kfLeftLabelBackgroundColor;
+    if (self.kfLeftColor) {
+        self.pLeftLabel.textColor = self.kfLeftColor;
     }
-    // Border width
-    float mBorderWidth = 1.f;
-    if (self.kfLeftLabelBorderWidth) {
-        mBorderWidth = [self.kfLeftLabelBorderWidth floatValue];
-    }
-    self.pLeftLabel.layer.borderWidth = mBorderWidth;
     
-    // Border color
-    CGColorRef mBorderColor = [UIColor brownColor].CGColor;
-    if (self.kfLeftLabelBorderColor) {
-        mBorderColor = self.kfLeftLabelBorderColor.CGColor;
-    }
-    self.pLeftLabel.layer.borderColor = mBorderColor;
+    // Left Label Background Color
+    if (self.kfLeftBackgroundColor)
+    self.pLeftLabel.backgroundColor = self.kfLeftBackgroundColor;
+    
+    // Left Label Border color
+    self.pLeftLabel.layer.borderColor = self.kfLeftBorderColor.CGColor;
+    self.pLeftLabel.layer.borderWidth = self.kfLeftBorderWidth;
+    
+    // Left Label Border width
     self.pLeftLabel.layer.cornerRadius = 4.f;
     self.pLeftLabel.textAlignment = NSTextAlignmentRight;
     
     // Label width
     CGFloat mLabelWidth;
-    if (self.kfLeftLabelWidth) {
-        mLabelWidth = [self.kfLeftLabelWidth floatValue];
+    if (self.kfLeftWidth) {
+        mLabelWidth = self.kfLeftWidth;
     }else{
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
         NSDictionary *attributes = @{NSFontAttributeName:self.pLeftLabel.font, NSParagraphStyleAttributeName:paragraphStyle.copy};
-        CGRect mBounds = [self.kfLeftLabelText boundingRectWithSize:CGSizeMake(999, 999)
+        CGRect mBounds = [self.kfLeftText boundingRectWithSize:CGSizeMake(999, 999)
                                                      options:NSStringDrawingUsesLineFragmentOrigin
                                                   attributes:attributes
                                                      context:nil];
@@ -101,67 +100,79 @@
 }
 
 
-#pragma mark - Left View
--(void)setKfLeftLabelText:(NSString *)mText{
+#pragma mark - Setter & Getter | Lazy Config
+#pragma mark -- Layer
+- (void)setKfBorderColor:(UIColor *)mBorderColor{
+    kfBorderColor = mBorderColor;
+    self.layer.borderColor = mBorderColor.CGColor;
+}
+- (void)setKfBorderWidth:(CGFloat)mBorderWidth{
+    kfBorderWidth = mBorderWidth;
+    self.layer.borderWidth = mBorderWidth;
+}
+#pragma mark -- Left SubView
+-(void)setKfLeftText:(NSString *)mText{
     if (!mText) return;
     if ([mText isEqualToString:@""]) return;
-    _kfLeftLabelText = mText;
+    kfLeftText = mText;
     // load left label
     self.pLeftLabel.text = mText;
 }
-
--(void)setkfLeftLabelWidth:(NSNumber *)mLeftLabelWidth{
-    if (!mLeftLabelWidth) return;
-    if (0.01 > mLeftLabelWidth.floatValue) return;
-    _kfLeftLabelWidth = mLeftLabelWidth;
-    CGRect frm = self.leftView.frame;
-    frm.size.width = [mLeftLabelWidth floatValue];
-    self.leftView.frame = frm;
+-(void)setKfLeftBackgroundColor:(UIColor *)mColor{
+    if (!mColor) return;
+    kfLeftBackgroundColor = mColor;
+    self.leftView.backgroundColor = mColor;
+}
+- (void)setKfLeftWidth:(CGFloat)mWidth{
+    kfLeftWidth = mWidth;
+    CGRect mFrame = self.leftView.frame;
+    mFrame.size.width = mWidth;
+    self.leftView.frame = mFrame;
     [self setNeedsUpdateConstraints];
 }
 
--(void)setKfLeftLabelBackgroundColor:(UIColor *)mLeftLabelBackgroundColor{
-    if (!mLeftLabelBackgroundColor) return;
-    _kfLeftLabelBackgroundColor = mLeftLabelBackgroundColor;
-    self.leftView.backgroundColor = mLeftLabelBackgroundColor;
+/** Left subview border width */
+- (void)setKfLeftBorderWidth:(CGFloat)mLeftLabelBorderWidth{
+    kfLeftBorderWidth = mLeftLabelBorderWidth;
+    self.pLeftLabel.layer.borderWidth = mLeftLabelBorderWidth;
 }
-
-/**
- *  @author Khiyuan.Fan, 2015-12[3]
- *
- *  left view border width
- *
- *  @param leftViewBorderWidth NSNumber @...
- */
--(void)setKfLeftLabelBorderWidth:(NSNumber *)mLeftLabelBorderWidth{
-    if (!mLeftLabelBorderWidth) return;
-    _kfLeftLabelBorderWidth = mLeftLabelBorderWidth;
-    self.pLeftLabel.layer.borderWidth = mLeftLabelBorderWidth.floatValue;
-}
-
--(void)setKfLeftLabelBorderColor:(UIColor *)mLeftLabelBorderColor{
+/** Left subview border color */
+-(void)setKfLeftBorderColor:(UIColor *)mLeftLabelBorderColor{
     if (!mLeftLabelBorderColor) return;
-    _kfLeftLabelBorderColor = mLeftLabelBorderColor;
+    kfLeftBorderColor = mLeftLabelBorderColor;
     self.pLeftLabel.layer.borderColor = mLeftLabelBorderColor.CGColor;
 }
 
-#pragma mark - Verify
-
-- (void)setKfBorderColor:(UIColor *)mBorderColor{
-    _kfBorderColor = mBorderColor;
-    self.layer.borderColor = mBorderColor.CGColor;
+#pragma mark -- Verify
+- (void)setKfVerifed:(BOOL)kfVerifed{
+    _kfVerifed = kfVerifed;
+    self.layer.borderColor = (kfVerifed)? self.kfBorderColor.CGColor : self.kfVerifyFailedBorderColor.CGColor;
 }
-
-- (void)setKfIsCorrect:(BOOL)mIsCorrect{
-    _kfIsCorrect = mIsCorrect;
-    if (mIsCorrect) {
-        self.layer.borderColor = self.kfBorderColor.CGColor;
-    }else{
-        self.layer.borderColor = self.kfInCorrectBorderColor.CGColor;
+#pragma mark -- Lazy Config
+- (UIColor *)kfFocusBorderColor{
+    if (!kfFocusBorderColor) {
+        kfFocusBorderColor = [UIColor colorWithRed:0.400 green:0.663 blue:0.984 alpha:1.0];
     }
+    return kfFocusBorderColor;
 }
-
-#pragma mark - Setter & Getter
+- (UIColor *)kfLeftBorderColor{
+    if (!kfLeftBorderColor) {
+        kfLeftBorderColor = [UIColor clearColor];
+    }
+    return kfLeftBorderColor;
+}
+- (UIColor *)kfVerifyFailedBorderColor{
+    if (!kfVerifyFailedBorderColor) {
+        kfVerifyFailedBorderColor = [UIColor colorWithRed:0.984 green:0.400 blue:0.663 alpha:1.0];
+    }
+    return kfVerifyFailedBorderColor;
+}
+- (UIColor *)kfVerifyPassedBorderColor{
+    if (!kfVerifyPassedBorderColor) {
+        kfVerifyPassedBorderColor = [UIColor colorWithRed:0.984 green:0.400 blue:0.663 alpha:1.0];
+    }
+    return kfVerifyPassedBorderColor;
+}
 
 - (UILabel *)pLeftLabel{
     if (!_pLeftLabel) {

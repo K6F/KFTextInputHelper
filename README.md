@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/KFTextInputHelper.svg?style=flat)](http://cocoapods.org/pods/KFTextInputHelper)
 [![Platform](https://img.shields.io/cocoapods/p/KFTextInputHelper.svg?style=flat)](http://cocoapods.org/pods/KFTextInputHelper)
 
-## Cut
+## Cut ##
 
-![Cut](./Images/KFTextInputHelper.gif];
+![Cut](./Images/KFTextInputHelper.gif)  
 
 ## Usage
 
@@ -18,7 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 In storyboard, change the class of UITextField or UITextView
 to KFTextField or KFTextView  
 **IB_DESIGNABLE** supported!
-![IB_Designable](./Images/IBDesign.jpg];
+![IB_Designable](./Images/IBDesign.jpg)  
 
 ### Use KFTextInputHelper
 To use KFTextInputHelper, invoke init method and it would setup automatically.

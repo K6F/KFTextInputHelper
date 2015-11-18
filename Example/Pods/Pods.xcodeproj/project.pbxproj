@@ -16,10 +16,6 @@
 		67BDA9B42EF182ED81359E566FDEABED /* KF_KeyboardDown@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */; };
 		6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		719639A0DC02BC94E2EF1BB5C33240DB /* Pods-KFTextInputHelper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE684180F87B00EFD78D2A10AF85E3F /* Pods-KFTextInputHelper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA3831D1BE5C87300979F51 /* KFDatePickerTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA3831B1BE5C87300979F51 /* KFDatePickerTextField.h */; };
-		7DA3831E1BE5C87300979F51 /* KFDatePickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3831C1BE5C87300979F51 /* KFDatePickerTextField.m */; };
-		7DA383211BE5C92900979F51 /* KFPickerTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DA3831F1BE5C92900979F51 /* KFPickerTextField.h */; };
-		7DA383221BE5C92900979F51 /* KFPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA383201BE5C92900979F51 /* KFPickerTextField.m */; };
 		7DB37A8C1BAA6858000544F0 /* KFDatePickerField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB37A8A1BAA6858000544F0 /* KFDatePickerField.h */; };
 		7DB37A8D1BAA6858000544F0 /* KFDatePickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB37A8B1BAA6858000544F0 /* KFDatePickerField.m */; };
 		8287E01D2E5E481E9A3DB6A7086EC10F /* KFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */; };
@@ -66,10 +62,6 @@
 		6E78D8E91E8ADFC2C653C2CFA070CD57 /* Pods-KFTextInputHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFTextInputHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6FB72119D8A9EAFB47CD54B03B616E4F /* Pods-KFTextInputHelper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KFTextInputHelper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7A2CC04FBEB199278A487BF24257755F /* KF_KeyboardDown@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "KF_KeyboardDown@3x.png"; sourceTree = "<group>"; };
-		7DA3831B1BE5C87300979F51 /* KFDatePickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFDatePickerTextField.h; sourceTree = "<group>"; };
-		7DA3831C1BE5C87300979F51 /* KFDatePickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFDatePickerTextField.m; sourceTree = "<group>"; };
-		7DA3831F1BE5C92900979F51 /* KFPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFPickerTextField.h; sourceTree = "<group>"; };
-		7DA383201BE5C92900979F51 /* KFPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFPickerTextField.m; sourceTree = "<group>"; };
 		7DB37A8A1BAA6858000544F0 /* KFDatePickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFDatePickerField.h; sourceTree = "<group>"; };
 		7DB37A8B1BAA6858000544F0 /* KFDatePickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFDatePickerField.m; sourceTree = "<group>"; };
 		8757E87B266CBCD14FEFF0501B43B2E8 /* KFTextInputHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KFTextInputHelper-dummy.m"; sourceTree = "<group>"; };
@@ -154,12 +146,8 @@
 			children = (
 				7DB37A8A1BAA6858000544F0 /* KFDatePickerField.h */,
 				7DB37A8B1BAA6858000544F0 /* KFDatePickerField.m */,
-				7DA3831B1BE5C87300979F51 /* KFDatePickerTextField.h */,
-				7DA3831C1BE5C87300979F51 /* KFDatePickerTextField.m */,
 				BF5DE5908792C24F93BA22B9E7DD5CC9 /* KFPickerField.h */,
 				DDAAA04B5A24293A4FF3B1EFD70B475C /* KFPickerField.m */,
-				7DA3831F1BE5C92900979F51 /* KFPickerTextField.h */,
-				7DA383201BE5C92900979F51 /* KFPickerTextField.m */,
 				DA31691719C89929B0D690BCF14FC35C /* KFTextField.h */,
 				2A18319DF69F559052C9CFA5B5E5DEEE /* KFTextField.m */,
 				E17EC5FC40C8AC1FA5B73C0007CB046A /* KFTextInputHelper.h */,
@@ -276,8 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDD957C9D759E6A67F2B26D8E292CCA7 /* KFPickerField.h in Headers */,
-				7DA383211BE5C92900979F51 /* KFPickerTextField.h in Headers */,
-				7DA3831D1BE5C87300979F51 /* KFDatePickerTextField.h in Headers */,
 				C2B7BE6F894CBB27426B7CC8D78F1A67 /* KFTextField.h in Headers */,
 				CB78A5B6DC8B90D699D3F23286990D0F /* KFTextInputHelper-umbrella.h in Headers */,
 				6DEDFDA62A0CF49E507CFBF137067003 /* KFTextInputHelper.h in Headers */,
@@ -409,8 +395,6 @@
 				7DB37A8D1BAA6858000544F0 /* KFDatePickerField.m in Sources */,
 				D2222DD631CE31FEE0FE91A9B355E264 /* KFTextInputHelper-dummy.m in Sources */,
 				1DDE416A86091C57AE584EE22748CB0C /* KFTextInputHelper.m in Sources */,
-				7DA3831E1BE5C87300979F51 /* KFDatePickerTextField.m in Sources */,
-				7DA383221BE5C92900979F51 /* KFPickerTextField.m in Sources */,
 				0115D1C1E50B5B4BC62670207CFE66DC /* KFTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

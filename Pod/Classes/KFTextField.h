@@ -19,18 +19,19 @@ IB_DESIGNABLE
 @interface KFTextField : UITextField <UITextFieldDelegate>
 
 #pragma mark - Layout
-@property (nonatomic) IBInspectable UIColor  *kfBorderColor;
-@property (nonatomic) IBInspectable UIColor  *kfFocusBorderColor;
-@property (nonatomic) IBInspectable CGFloat  kfBorderWidth;
+@property (nonatomic) IBInspectable UIColor *kfBorderColor;
+@property (nonatomic) IBInspectable UIColor *kfFocusBorderColor;
+@property (nonatomic) IBInspectable CGFloat kfBorderWidth;
 
 #pragma mark - Left SubView
-@property (nonatomic) IBInspectable NSString *kfLeftText;
-@property (nonatomic) IBInspectable UIColor  *kfLeftColor;
-@property (nonatomic) IBInspectable UIColor  *kfLeftBackgroundColor;
-@property (nonatomic) IBInspectable CGFloat  kfLeftWidth;
+@property (nonatomic) IBInspectable NSString   *kfLeftText;
+@property (nonatomic) IBInspectable UIColor    *kfLeftColor;
+@property (nonatomic) IBInspectable UIFont     *kfLeftFont;
+@property (nonatomic) IBInspectable UIColor    *kfLeftBackgroundColor;
+@property (nonatomic) IBInspectable CGFloat    kfLeftWidth;
 #pragma mark -- Border
-@property (nonatomic) IBInspectable UIColor  *kfLeftBorderColor;
-@property (nonatomic) IBInspectable CGFloat  kfLeftBorderWidth;
+@property (nonatomic) IBInspectable UIColor *kfLeftBorderColor;
+@property (nonatomic) IBInspectable CGFloat kfLeftBorderWidth;
 
 #pragma mark - Verify
 /** TODO: add verify code */

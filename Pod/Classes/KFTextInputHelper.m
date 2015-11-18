@@ -125,7 +125,7 @@ static const int kInputViewDoneButtonTagKey       = 92787;
 
 /** remove tap gesture from active window */
 -(void)p_removeTapGesture{
-    [self.pContainerView.window removeGestureRecognizer:self.pTapGesture];
+    [self.pContainerView removeGestureRecognizer:self.pTapGesture];
 }
 
 - (void)p_keyboardDidShow:(NSNotification *) notification{
